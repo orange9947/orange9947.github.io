@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>orange</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:   #f97316;   /* orange */
+      --accent-2: #fb923c;
+      --bg:       #fafaf9;
+      --surface:  #ffffff;
+      --border:   #e7e5e4;
+      --text:     #1c1917;
+      --muted:    #78716c;
+      --radius:   14px;
+      --max-w:    720px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                   "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 64px 0; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 249, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── Hero ── */
+    #hero {
+      padding: 100px 0 80px;
+      text-align: left;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #fff7ed;
+      color: var(--accent);
+      border: 1px solid #fed7aa;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 14px;
+      margin-bottom: 20px;
+      letter-spacing: 0.04em;
+    }
+
+    #hero h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    #hero h1 span {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .bio {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 520px;
+      border-left: 3px solid var(--border);
+      padding-left: 16px;
+      font-style: italic;
+    }
+
+    .bio em {
+      color: #c4b5a0;
+      font-style: normal;
+    }
+
+    /* ── Section headings ── */
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+    }
+
+    /* ── Skills ── */
+    #skills { border-top: 1px solid var(--border); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 480px) {
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .skill-card:hover {
+      box-shadow: 0 4px 20px rgba(249,115,22,0.1);
+      transform: translateY(-2px);
+    }
+
+    .skill-card-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .skill-card-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .skill-card-desc { font-size: 0.85rem; color: var(--muted); }
+
+    /* ── Projects ── */
+    #projects { border-top: 1px solid var(--border); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:not(.placeholder):hover {
+      border-style: solid;
+      border-color: var(--accent);
+      box-shadow: 0 4px 20px rgba(249,115,22,0.12);
+      transform: translateY(-3px);
+    }
+
+    .project-card.placeholder {
+      background: repeating-linear-gradient(
+        -45deg,
+        #fafaf9,
+        #fafaf9 6px,
+        #f5f5f4 6px,
+        #f5f5f4 12px
+      );
+      cursor: default;
+      opacity: 0.7;
+    }
+
+    .project-card .p-icon { font-size: 1.4rem; }
+    .project-card .p-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .project-card .p-desc { font-size: 0.82rem; color: var(--muted); }
+
+    .project-card .p-arrow {
+      margin-top: auto;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .project-card:not(.placeholder):hover .p-arrow { opacity: 1; }
+
+    /* ── Contact ── */
+    #contact { border-top: 1px solid var(--border); }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 2px 12px rgba(249,115,22,0.15);
+    }
+
+    .contact-link svg {
+      width: 16px; height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #a8a29e;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="inner">
+    <a class="nav-logo" href="#hero">orange</a>
+    <div class="nav-links">
+      <a href="#skills">技能</a>
+      <a href="#projects">项目</a>
+      <a href="#contact">联系</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section id="hero">
+  <div class="container">
+    <div class="tag">👋 Hi, I'm</div>
+    <h1>orange <span>.</span></h1>
+    <p class="bio">测控仪器与技术在读 · 专注嵌入式硬件与固件调试 · 用信号和代码理解物理世界</p>
+  </div>
+</section>
+
+<!-- ── Skills ── -->
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">🛠 技能 &amp; 在学</h2>
+    <p class="section-desc">嵌入式硬件 · 信号采集 · 无线通信协议 · 系统调试</p>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-icon">🔧</div>
+        <div class="skill-card-title">嵌入式开发</div>
+        <div class="skill-card-desc">STM32 / ESP32 · C / C++ · 固件调试 · NI-DAQmx 驱动配置</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">📡</div>
+        <div class="skill-card-title">通信协议</div>
+        <div class="skill-card-desc">BLE / GATT · USB · 以太网接口 · WiFi 6 无线通信</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🔬</div>
+        <div class="skill-card-title">硬件调试</div>
+        <div class="skill-card-desc">万用表 · 示波器 · 信号接地与抗干扰 · 热拔插压力测试</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">⚙️</div>
+        <div class="skill-card-title">软件 &amp; 工具链</div>
+        <div class="skill-card-desc">LabVIEW 状态机 · Python / PyTorch · Linux · Git</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Projects ── -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">🚀 我的项目</h2>
+    <p class="section-desc">从硬件信号链到无线协议栈，动手做出来的才算数。</p>
+
+    <div class="projects-grid">
+
+      <a class="project-card" href="https://github.com/orange9947" target="_blank" rel="noopener">
+        <div class="p-icon">🌡️</div>
+        <div class="p-name">多通道温度智能监控系统</div>
+        <div class="p-desc">USB-DAQ + LabVIEW 状态机，12 小时连续运行无误报，采集精度 ±0.1℃</div>
+        <div class="p-arrow">查看 →</div>
+      </a>
+
+      <a class="project-card" href="https://github.com/orange9947" target="_blank" rel="noopener">
+        <div class="p-icon">📶</div>
+        <div class="p-name">BLE 协议逆向 · IoT 控制系统</div>
+        <div class="p-desc">逆向 GATT 私有协议，Android 替代客户端 + RFID 联动，指令送达率 &gt;99%</div>
+        <div class="p-arrow">查看 →</div>
+      </a>
+
+      <a class="project-card" href="https://github.com/orange9947" target="_blank" rel="noopener">
+        <div class="p-icon">🖥️</div>
+        <div class="p-name">异构算力调度 · AI 工具链</div>
+        <div class="p-desc">Linux + AMD GPU 加速推理，Redis 分布式任务队列，GPU 利用率从 30% 提升至 70%</div>
+        <div class="p-arrow">查看 →</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">📬 联系我</h2>
+    <p class="section-desc">欢迎随时聊聊。</p>
+
+    <div class="contact-grid">
+
+      <!-- GitHub -->
+      <a class="contact-link" href="https://github.com/orange9947" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.185 6.839 9.504.5.092.682-.217.682-.482
+            0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462
+            -.908-.62.069-.608.069-.608 1.003.071 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832
+            .092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688
+            -.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0
+            012.504.338c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595
+            1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012
+            2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.021C22 6.484 17.522 2 12 2z"/>
+        </svg>
+        GitHub
+      </a>
+
+      <!-- Email -->
+      <a class="contact-link" href="mailto:2982779947@qq.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/>
+        </svg>
+        Email
+      </a>
+
+      <!-- TODO: 按需添加更多链接，例如微博、知乎、Twitter/X 等 -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="container">
+    <p>© 2026 <a href="#">orange</a> · Built with ❤️ &amp; plain HTML</p>
+  </div>
+</footer>
+
+</body>
+</html>
