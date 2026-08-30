@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>orange</title>
+  <title>orange · 3D 打印 & Klipper</title>
   <style>
     /* ── Reset & Base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --accent:   #f97316;   /* orange */
       --accent-2: #fb923c;
@@ -17,11 +16,9 @@
       --text:     #1c1917;
       --muted:    #78716c;
       --radius:   14px;
-      --max-w:    720px;
+      --max-w:    760px;
     }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
                    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
@@ -30,16 +27,13 @@
       line-height: 1.7;
       font-size: 16px;
     }
-
     /* ── Layout ── */
     .container {
       max-width: var(--max-w);
       margin: 0 auto;
       padding: 0 24px;
     }
-
     section { padding: 64px 0; }
-
     /* ── Nav ── */
     nav {
       position: sticky;
@@ -49,7 +43,6 @@
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
-
     nav .inner {
       max-width: var(--max-w);
       margin: 0 auto;
@@ -59,7 +52,6 @@
       align-items: center;
       justify-content: space-between;
     }
-
     .nav-logo {
       font-weight: 700;
       font-size: 1.1rem;
@@ -67,7 +59,6 @@
       text-decoration: none;
       letter-spacing: -0.02em;
     }
-
     .nav-links { display: flex; gap: 24px; }
     .nav-links a {
       text-decoration: none;
@@ -76,13 +67,28 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--accent); }
-
     /* ── Hero ── */
     #hero {
-      padding: 100px 0 80px;
+      padding: 96px 0 72px;
       text-align: left;
     }
-
+    .hero-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+    }
+    .hero-svg {
+      width: 220px;
+      height: auto;
+      color: var(--accent);
+      flex-shrink: 0;
+      filter: drop-shadow(0 10px 24px rgba(249, 115, 22, 0.18));
+    }
+    @media (max-width: 720px) {
+      .hero-wrap { flex-direction: column; align-items: flex-start; gap: 32px; }
+      .hero-svg { width: 150px; }
+    }
     .tag {
       display: inline-block;
       background: #fff7ed;
@@ -95,36 +101,31 @@
       margin-bottom: 20px;
       letter-spacing: 0.04em;
     }
-
     #hero h1 {
-      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-size: clamp(2rem, 6vw, 3rem);
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1.15;
       margin-bottom: 20px;
     }
-
     #hero h1 span {
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
     .bio {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--muted);
       max-width: 520px;
       border-left: 3px solid var(--border);
       padding-left: 16px;
       font-style: italic;
     }
-
     .bio em {
       color: #c4b5a0;
       font-style: normal;
     }
-
     /* ── Section headings ── */
     .section-title {
       font-size: 1.4rem;
@@ -135,68 +136,81 @@
       align-items: center;
       gap: 10px;
     }
-
     .section-title::after {
       content: '';
       flex: 1;
       height: 1px;
       background: var(--border);
     }
-
     .section-desc {
       color: var(--muted);
       font-size: 0.95rem;
       margin-bottom: 32px;
     }
-
-    /* ── Skills ── */
-    #skills { border-top: 1px solid var(--border); }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+    /* ── Timeline (经历) ── */
+    #about { border-top: 1px solid var(--border); }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
-
-    @media (max-width: 480px) {
-      .skills-grid { grid-template-columns: 1fr; }
+    .tl-item {
+      position: relative;
+      padding-left: 24px;
+      border-left: 2px solid var(--border);
     }
-
-    .skill-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px 22px;
-      transition: box-shadow 0.2s, transform 0.2s;
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
     }
-
-    .skill-card:hover {
-      box-shadow: 0 4px 20px rgba(249,115,22,0.1);
-      transform: translateY(-2px);
-    }
-
-    .skill-card-icon { font-size: 1.5rem; margin-bottom: 8px; }
-    .skill-card-title {
-      font-weight: 600;
-      font-size: 0.95rem;
+    .tl-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 4px;
     }
-    .skill-card-desc { font-size: 0.85rem; color: var(--muted); }
-
+    .tl-date {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 999px;
+      padding: 2px 10px;
+    }
+    .tl-tag {
+      font-size: 0.72rem;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 2px 10px;
+    }
+    .tl-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .tl-desc { font-size: 0.88rem; color: var(--muted); }
     /* ── Projects ── */
     #projects { border-top: 1px solid var(--border); }
-
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
       gap: 16px;
     }
-
     .project-card {
       background: var(--surface);
       border: 1px dashed var(--border);
       border-radius: var(--radius);
-      padding: 24px 20px;
+      padding: 20px;
       text-decoration: none;
       color: inherit;
       display: flex;
@@ -206,14 +220,12 @@
       position: relative;
       overflow: hidden;
     }
-
     .project-card:not(.placeholder):hover {
       border-style: solid;
       border-color: var(--accent);
       box-shadow: 0 4px 20px rgba(249,115,22,0.12);
       transform: translateY(-3px);
     }
-
     .project-card.placeholder {
       background: repeating-linear-gradient(
         -45deg,
@@ -223,17 +235,46 @@
         #f5f5f4 12px
       );
       cursor: default;
-      opacity: 0.7;
+      opacity: 0.75;
     }
-
-    .project-card .p-icon { font-size: 1.4rem; }
-    .project-card .p-name {
+    .p-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .p-icon { font-size: 1.4rem; }
+    .badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 999px;
+      padding: 2px 9px;
+      white-space: nowrap;
+    }
+    .p-name {
       font-weight: 700;
       font-size: 0.95rem;
+      line-height: 1.4;
     }
-    .project-card .p-desc { font-size: 0.82rem; color: var(--muted); }
-
-    .project-card .p-arrow {
+    .p-desc { font-size: 0.82rem; color: var(--muted); }
+    .p-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 2px;
+    }
+    .p-tags span {
+      font-size: 0.7rem;
+      color: var(--muted);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 1px 8px;
+    }
+    .p-arrow {
       margin-top: auto;
       font-size: 0.8rem;
       color: var(--accent);
@@ -242,16 +283,72 @@
       transition: opacity 0.2s;
     }
     .project-card:not(.placeholder):hover .p-arrow { opacity: 1; }
-
+    /* ── Skills ── */
+    #skills { border-top: 1px solid var(--border); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 480px) {
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .skill-card:hover {
+      box-shadow: 0 4px 20px rgba(249,115,22,0.1);
+      transform: translateY(-2px);
+    }
+    .skill-card-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .skill-card-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .skill-card-desc { font-size: 0.85rem; color: var(--muted); }
+    .skill-extra {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    /* ── Other projects ── */
+    #other { border-top: 1px solid var(--border); }
+    .other-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .other-link {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .other-link:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 20px rgba(249,115,22,0.1);
+    }
+    .other-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .other-name { font-weight: 600; font-size: 0.92rem; }
+    .other-desc { font-size: 0.82rem; color: var(--muted); }
     /* ── Contact ── */
     #contact { border-top: 1px solid var(--border); }
-
     .contact-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
-
     .contact-link {
       display: inline-flex;
       align-items: center;
@@ -266,18 +363,15 @@
       font-weight: 500;
       transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
     }
-
     .contact-link:hover {
       border-color: var(--accent);
       color: var(--accent);
       box-shadow: 0 2px 12px rgba(249,115,22,0.15);
     }
-
     .contact-link svg {
       width: 16px; height: 16px;
       flex-shrink: 0;
     }
-
     /* ── Footer ── */
     footer {
       border-top: 1px solid var(--border);
@@ -286,9 +380,9 @@
       font-size: 0.82rem;
       color: #a8a29e;
     }
-
     footer a { color: var(--accent); text-decoration: none; }
   </style>
+
 </head>
 <body>
 
@@ -297,8 +391,9 @@
   <div class="inner">
     <a class="nav-logo" href="#hero">orange</a>
     <div class="nav-links">
+      <a href="#about">经历</a>
+      <a href="#projects">打印项目</a>
       <a href="#skills">技能</a>
-      <a href="#projects">项目</a>
       <a href="#contact">联系</a>
     </div>
   </div>
@@ -307,9 +402,98 @@
 <!-- ── Hero ── -->
 <section id="hero">
   <div class="container">
-    <div class="tag">👋 Hi, I'm</div>
-    <h1>orange <span>.</span></h1>
-    <p class="bio">测控仪器与技术在读 · 专注嵌入式硬件与固件调试 · 用信号和代码理解物理世界</p>
+    <div class="hero-wrap">
+      <div>
+        <span class="tag">🖨️ 3D 打印 · Klipper · 创客</span>
+        <h1>orange<br /><span>把想法打印出来</span></h1>
+        <p class="bio">武汉理工大学 测控仪器与技术 · 专注 FDM 3D 打印机与 Klipper 调优 · 从模型到实物，亲手调出每一个参数</p>
+      </div>
+      <svg class="hero-svg" viewBox="0 0 220 230" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- 机身框架 -->
+        <rect x="28" y="18" width="164" height="196" rx="10" stroke="currentColor" stroke-width="5"/>
+        <!-- 顶部耗材盘 -->
+        <circle cx="110" cy="62" r="22" stroke="currentColor" stroke-width="5"/>
+        <circle cx="110" cy="62" r="6" fill="currentColor"/>
+        <path d="M110 84v10" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+        <!-- Z 轴光杆 -->
+        <line x1="46" y1="98" x2="46" y2="196" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+        <line x1="174" y1="98" x2="174" y2="196" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+        <!-- X 轴龙门 -->
+        <line x1="46" y1="118" x2="174" y2="118" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+        <!-- 打印头 -->
+        <rect x="92" y="102" width="36" height="32" rx="5" fill="currentColor"/>
+        <path d="M103 134h14l-4 14h-6z" fill="currentColor"/>
+        <!-- 打印床 -->
+        <rect x="58" y="176" width="104" height="12" rx="4" fill="currentColor" opacity="0.85"/>
+        <!-- 打印中的模型 -->
+        <rect x="94" y="144" width="32" height="32" rx="3" fill="currentColor" opacity="0.35"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ── Experience ── -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">🧭 经历</h2>
+    <p class="section-desc">从 3D 扫描到 FDM 打印，一直跟“实物制造”打交道。</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-head">
+          <span class="tl-date">2026.03 – 2026.09</span>
+          <span class="tl-tag">当前</span>
+        </div>
+        <div class="tl-title">轻量智造（深圳）科技有限公司 · Klipper 运动学算法（实习）</div>
+        <div class="tl-desc">负责 3D 打印机 Klipper 运动学算法与 CPU 负载优化：重构任务入队策略，将 CPU 从过载优化至稳定可控，解决复杂模型无法打印的问题；通过模块时钟调整抑制机身共振，提升打印稳定性与精度；修复调平探针过冲，提高应变片识别精度。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-head">
+          <span class="tl-date">2025.05 – 2026.01</span>
+        </div>
+        <div class="tl-title">武汉中观自动化科技有限公司 · 3D 扫描仪验证（实习）</div>
+        <div class="tl-desc">负责 HyperScan 系列 3D 扫描仪的嵌入式功能验证与硬件调试，熟悉双目视觉、激光测距与 WiFi 6 通信原理；完成跟踪器与扫描仪校准、RMS 精度及传感器一致性分析；定位并解决 USB/网口通信、固件升级等底层故障。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3D Printing Projects ── -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">🖨️ 3D 打印项目</h2>
+    <p class="section-desc">从运动学算法到打印调参，实打实的机器问题。</p>
+    <div class="projects-grid">
+      <a class="project-card" href="https://github.com/orange9947" target="_blank" rel="noopener">
+        <div class="p-top">
+          <div class="p-icon">⚙️</div>
+          <span class="badge">工作项目</span>
+        </div>
+        <div class="p-name">Klipper 运动学与 CPU 负载优化</div>
+        <div class="p-desc">重构任务入队策略，CPU 从过载到稳定可控，解决复杂模型无法打印的问题</div>
+        <div class="p-tags"><span>Klipper</span><span>运动学</span><span>调度优化</span></div>
+        <div class="p-arrow">查看 →</div>
+      </a>
+      <a class="project-card" href="https://github.com/orange9947" target="_blank" rel="noopener">
+        <div class="p-top">
+          <div class="p-icon">📐</div>
+          <span class="badge">工作项目</span>
+        </div>
+        <div class="p-name">打印稳定性与精度调优</div>
+        <div class="p-desc">模块时钟调整抑制机身共振；修复调平探针过冲，提高应变片识别精度</div>
+        <div class="p-tags"><span>振动抑制</span><span>调平校准</span><span>精度</span></div>
+        <div class="p-arrow">查看 →</div>
+      </a>
+      <a class="project-card" href="https://github.com/orange9947" target="_blank" rel="noopener">
+        <div class="p-top">
+          <div class="p-icon">🔭</div>
+          <span class="badge">3D 扫描</span>
+        </div>
+        <div class="p-name">HyperScan 3D 扫描仪验证</div>
+        <div class="p-desc">双目视觉 + 激光测距原理，跟踪器/扫描仪校准，RMS 精度与一致性分析</div>
+        <div class="p-tags"><span>双目视觉</span><span>RMS 精度</span><span>底层调试</span></div>
+        <div class="p-arrow">查看 →</div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -317,62 +501,53 @@
 <section id="skills">
   <div class="container">
     <h2 class="section-title">🛠 技能 &amp; 在学</h2>
-    <p class="section-desc">嵌入式硬件 · 信号采集 · 无线通信协议 · 系统调试</p>
-
+    <p class="section-desc">围绕 3D 打印的软硬一体技能栈。</p>
     <div class="skills-grid">
       <div class="skill-card">
+        <div class="skill-card-icon">🧠</div>
+        <div class="skill-card-title">Klipper 与运动学</div>
+        <div class="skill-card-desc">Klipper 固件 · 运动学算法 · 任务队列调度 · CPU 负载优化</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🎯</div>
+        <div class="skill-card-title">打印调优</div>
+        <div class="skill-card-desc">压力提前 · 输入整形 · 回抽与桥接 · 温度塔与材料测试</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">📐</div>
+        <div class="skill-card-title">建模与切片</div>
+        <div class="skill-card-desc">CAD 建模 · 切片参数 · 支撑与悬垂优化 · 测试模型设计</div>
+      </div>
+      <div class="skill-card">
         <div class="skill-card-icon">🔧</div>
-        <div class="skill-card-title">嵌入式开发</div>
-        <div class="skill-card-desc">STM32 / ESP32 · C / C++ · 固件调试 · NI-DAQmx 驱动配置</div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-card-icon">📡</div>
-        <div class="skill-card-title">通信协议</div>
-        <div class="skill-card-desc">BLE / GATT · USB · 以太网接口 · WiFi 6 无线通信</div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-card-icon">🔬</div>
-        <div class="skill-card-title">硬件调试</div>
-        <div class="skill-card-desc">万用表 · 示波器 · 信号接地与抗干扰 · 热拔插压力测试</div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-card-icon">⚙️</div>
-        <div class="skill-card-title">软件 &amp; 工具链</div>
-        <div class="skill-card-desc">LabVIEW 状态机 · Python / PyTorch · Linux · Git</div>
+        <div class="skill-card-title">硬件与固件</div>
+        <div class="skill-card-desc">STM32 / ESP32 · 步进驱动 · 应变片探针 · 固件调试</div>
       </div>
     </div>
+    <p class="skill-extra">还有：C / C++ · Python / PyTorch · Linux · Git · LabVIEW · 嵌入式信号链</p>
   </div>
 </section>
 
-<!-- ── Projects ── -->
-<section id="projects">
+<!-- ── Other Projects ── -->
+<section id="other">
   <div class="container">
-    <h2 class="section-title">🚀 我的项目</h2>
-    <p class="section-desc">从硬件信号链到无线协议栈，动手做出来的才算数。</p>
-
-    <div class="projects-grid">
-
-      <a class="project-card" href="https://github.com/orange9947" target="_blank" rel="noopener">
-        <div class="p-icon">🌡️</div>
-        <div class="p-name">多通道温度智能监控系统</div>
-        <div class="p-desc">USB-DAQ + LabVIEW 状态机，12 小时连续运行无误报，采集精度 ±0.1℃</div>
-        <div class="p-arrow">查看 →</div>
+    <h2 class="section-title">🧪 其他探索</h2>
+    <p class="section-desc">与 3D 打印无关，但同样动手做出来的。</p>
+    <div class="other-list">
+      <a class="other-link" href="https://github.com/orange9947" target="_blank" rel="noopener">
+        <span class="other-icon">🤖</span>
+        <div>
+          <div class="other-name">AI 办公与异构算力调度（2024）</div>
+          <div class="other-desc">本地大模型 + AMD GPU 推理 + Redis 局域网算力调度</div>
+        </div>
       </a>
-
-      <a class="project-card" href="https://github.com/orange9947" target="_blank" rel="noopener">
-        <div class="p-icon">📶</div>
-        <div class="p-name">BLE 协议逆向 · IoT 控制系统</div>
-        <div class="p-desc">逆向 GATT 私有协议，Android 替代客户端 + RFID 联动，指令送达率 &gt;99%</div>
-        <div class="p-arrow">查看 →</div>
+      <a class="other-link" href="https://github.com/orange9947" target="_blank" rel="noopener">
+        <span class="other-icon">📶</span>
+        <div>
+          <div class="other-name">BLE 协议逆向 · IoT 控制（2025）</div>
+          <div class="other-desc">GATT 私有协议逆向 + Android 替代客户端 + RFID 联动</div>
+        </div>
       </a>
-
-      <a class="project-card" href="https://github.com/orange9947" target="_blank" rel="noopener">
-        <div class="p-icon">🖥️</div>
-        <div class="p-name">异构算力调度 · AI 工具链</div>
-        <div class="p-desc">Linux + AMD GPU 加速推理，Redis 分布式任务队列，GPU 利用率从 30% 提升至 70%</div>
-        <div class="p-arrow">查看 →</div>
-      </a>
-
     </div>
   </div>
 </section>
@@ -381,10 +556,8 @@
 <section id="contact">
   <div class="container">
     <h2 class="section-title">📬 联系我</h2>
-    <p class="section-desc">欢迎随时聊聊。</p>
-
+    <p class="section-desc">欢迎聊聊 3D 打印、Klipper 或者任何有趣的想法。</p>
     <div class="contact-grid">
-
       <!-- GitHub -->
       <a class="contact-link" href="https://github.com/orange9947" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -399,7 +572,6 @@
         </svg>
         GitHub
       </a>
-
       <!-- Email -->
       <a class="contact-link" href="mailto:2982779947@qq.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -409,9 +581,14 @@
         </svg>
         Email
       </a>
-
-      <!-- TODO: 按需添加更多链接，例如微博、知乎、Twitter/X 等 -->
-
+      <!-- WeChat -->
+      <span class="contact-link" title="微信号">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+        微信 qdq7953
+      </span>
     </div>
   </div>
 </section>
@@ -419,9 +596,8 @@
 <!-- ── Footer ── -->
 <footer>
   <div class="container">
-    <p>© 2026 <a href="#">orange</a> · Built with ❤️ &amp; plain HTML</p>
+    <p>© 2026 <a href="#hero">orange</a> · Built with ❤️ &amp; plain HTML</p>
   </div>
 </footer>
-
 </body>
 </html>
