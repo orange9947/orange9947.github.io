@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#121b28" />
+    <meta name="theme-color" content="#f1eee3" />
     <meta
       name="description"
       content="orange 的 2026 秋招工程档案：嵌入式、协议逆向、机器人与 AI 项目。"
@@ -154,19 +154,30 @@
         </div>
       </section>
       <div class="discipline-band" aria-label="研究方向">
-        <div class="shell discipline-inner">
-          <span>EMBEDDED</span><span class="band-plus">+</span
-          ><span>PROTOCOL</span><span class="band-plus">+</span
-          ><span>ROBOTICS</span><span class="band-plus">+</span
-          ><span>APPLIED AI</span
-          ><span class="band-star" aria-hidden="true">✳</span>
+        <div class="discipline-track">
+          <div class="discipline-inner">
+            <span>EMBEDDED</span><span class="band-plus">+</span
+            ><span>PROTOCOL</span><span class="band-plus">+</span
+            ><span>ROBOTICS</span><span class="band-plus">+</span
+            ><span>APPLIED AI</span><span class="band-plus">+</span
+            ><span>OPEN TO BUILD</span
+            ><span class="band-star" aria-hidden="true">✳</span>
+          </div>
+          <div class="discipline-inner" aria-hidden="true">
+            <span>EMBEDDED</span><span class="band-plus">+</span
+            ><span>PROTOCOL</span><span class="band-plus">+</span
+            ><span>ROBOTICS</span><span class="band-plus">+</span
+            ><span>APPLIED AI</span><span class="band-plus">+</span
+            ><span>OPEN TO BUILD</span
+            ><span class="band-star" aria-hidden="true">✳</span>
+          </div>
         </div>
       </div>
 
       <section class="snapshot-band" aria-label="秋招快照">
         <div class="shell snapshot-grid">
           <div class="snapshot-label"><span class="mono">RECRUITING SNAPSHOT</span><strong>把经历<br />变成证据。</strong></div>
-          <div class="snapshot-stat"><strong>05</strong><span>主打项目</span></div>
+          <div class="snapshot-stat"><strong>06</strong><span>项目档案</span></div>
           <div class="snapshot-stat"><strong>02</strong><span>段实习</span></div>
           <div class="snapshot-stat"><strong>10K<span>+</span></strong><span>行工程代码</span></div>
           <div class="snapshot-roles"><span class="mono">TARGET ROLES</span><p>MCU / AIoT / Linux 网关 / ROS</p></div>
@@ -189,7 +200,7 @@
               <p class="section-lede">3D 打印实习放在最前面；后面的项目，是同一套“把系统做出来、测出来、讲清楚”的延伸。</p>
             </div>
             <div class="project-stats mono" aria-label="项目概览">
-              <span><b>05</b> 主打项目</span><span><b>03</b> 技术方向</span><span><b>01</b> 个人制造实验室</span>
+              <span><b>06</b> 项目档案</span><span><b>03</b> 技术方向</span><span><b>02</b> 段实习</span>
             </div>
           </div>
           <div class="project-filter" role="group" aria-label="作品分类">
@@ -199,59 +210,40 @@
               data-filter="all"
               aria-pressed="true"
             >
-              全部项目 <span>05</span>
+              全部项目 <span>06</span>
             </button>
             <button
               type="button"
               class="filter-button"
-              data-filter="printing"
+              data-filter="embedded"
               aria-pressed="false"
             >
-              嵌入式 / IoT <span>02</span>
+              嵌入式 · 固件 <span>03</span>
             </button>
             <button
               type="button"
               class="filter-button"
-              data-filter="scanning"
+              data-filter="robotics"
               aria-pressed="false"
             >
-              机器人 / ROS <span>01</span>
+              机器人 · ROS <span>01</span>
             </button>
-            <button
-              type="button"
-              class="filter-button"
-              data-filter="ai"
-              aria-pressed="false"
-            >
-              AI / 数据 <span>02</span>
-            </button>
-            <button type="button" class="filter-button" data-filter="embedded" aria-pressed="false">
-              嵌入式 <span>02</span>
-            </button>
-            <button type="button" class="filter-button" data-filter="robotics" aria-pressed="false">
-              机器人 <span>01</span>
-            </button>
-            <button
-              type="button"
-              class="filter-button"
-              data-filter="data"
-              aria-pressed="false"
-            >
-              数据工程 <span>01</span>
+            <button type="button" class="filter-button" data-filter="ai" aria-pressed="false">
+              AI · 数据 <span>02</span>
             </button>
             <span id="filter-status" class="sr-only" aria-live="polite"
-              >显示全部 5 件项目</span
+              >显示全部 6 件项目</span
             >
           </div>
           <div class="project-grid">
-            <article class="project-item project-featured" data-category="printing embedded" data-detail="在 3D 打印实习中参与 Klipper 运动学算法与固件开发，围绕四头 FDM 打印机的任务调度、prime 宏和运动链路做二次开发与架构研读，解决复杂模型打印中的稳定性问题。" data-tags="Klipper,运动学,四头 FDM,调度优化">
+            <article class="project-item project-featured" data-category="embedded" data-detail="在 3D 打印实习中参与 Klipper 运动学算法与固件开发，围绕四头 FDM 打印机的任务调度、prime 宏和运动链路做二次开发与架构研读，解决复杂模型打印中的稳定性问题。" data-tags="Klipper,运动学,四头 FDM,调度优化">
               <button
                 class="project-open"
                 type="button"
                 aria-label="查看 3D 打印实习与 Klipper 运动学"
               >
                 <div class="project-image image-motion">
-                  <img src="assets/project-motion.png" alt="丝杆、滑台与多喷头结构组成的 3D 打印运动平台"
+                  <img src="assets/project-motion.svg" alt="3D 打印运动平台的工程制图：直线导轨、丝杆与四个工具头"
                     width="1200"
                     height="900"
                     loading="lazy"
@@ -269,7 +261,7 @@
                 <p class="project-proof mono"><strong>四头 FDM</strong> prime 宏与固件架构研读 · 实机问题闭环</p>
               </button>
             </article>
-            <article class="project-item" data-category="embedded printing" data-detail="逆向 Nikon SnapBridge APK 后独立实现 PTP/IP 协议客户端，完成 NEF/JPG 无线传图与远程拍摄 Android 原型。包含本地 fake 相机端到端测试与 Z6II 真机烟测。" data-tags="PTP/IP,Android,Kotlin,协议逆向">
+            <article class="project-item" data-category="embedded" data-detail="逆向 Nikon SnapBridge APK 后独立实现 PTP/IP 协议客户端，完成 NEF/JPG 无线传图与远程拍摄 Android 原型。包含本地 fake 相机端到端测试与 Z6II 真机烟测。" data-tags="PTP/IP,Android,Kotlin,协议逆向">
               <button
                 class="project-open"
                 type="button"
@@ -278,7 +270,7 @@
                 <div class="project-image image-form">
                   <img
                     src="assets/project-nikon.svg"
-                    alt="朱红色连续曲面作为 Nikon 无线传图原型的信号轨道视觉"
+                    alt="相机经 PTP/IP 无线链路向手机传图的工程制图，标注 vendor opcode"
                     width="1200"
                     height="900"
                     loading="lazy"
@@ -296,7 +288,7 @@
                 <p class="project-proof mono"><strong>5.4K+</strong> lines across Python core + Android · fake camera E2E</p>
               </button>
             </article>
-            <article class="project-item" data-category="robotics scanning" data-detail="基于 ROS Noetic 与 Gazebo 完成 Tianracer F1TENTH 仿真，从航点巡航状态机、有限圈数计时到 TEB 参数对比调优，加入分段速度规划与卡死恢复。" data-tags="ROS Noetic,TEB,Gazebo,路径规划">
+            <article class="project-item" data-category="robotics" data-detail="基于 ROS Noetic 与 Gazebo 完成 Tianracer F1TENTH 仿真，从航点巡航状态机、有限圈数计时到 TEB 参数对比调优，加入分段速度规划与卡死恢复。" data-tags="ROS Noetic,TEB,Gazebo,路径规划">
               <button
                 class="project-open"
                 type="button"
@@ -305,7 +297,7 @@
                 <div class="project-image image-scan">
                   <img
                     src="assets/project-ros.svg"
-                    alt="浅绿色层纹结构作为 Tianracer 赛道与路径规划的概念图"
+                    alt="F1TENTH 赛道俯视工程制图：赛道边界、中心线与橘色 racing line"
                     width="1200"
                     height="900"
                     loading="lazy"
@@ -323,10 +315,10 @@
                 <p class="project-proof mono"><strong>L0–L3</strong> complete · 3 TEB parameter sets</p>
               </button>
             </article>
-            <article class="project-supplement" data-category="data ai" data-detail="本地解密微信与 QQ NT 数据库，完成多格式清洗、去重、PII 脱敏和对话切分，构建 LLaMA-Factory 可用的 SFT 训练集，并用规则与 LLM 双路质量打分。数据只保留在本地，不公开原始内容。" data-tags="Python,SQLCipher,SFT,数据工程,PII 脱敏">
+            <article class="project-supplement" data-category="ai" data-detail="本地解密微信与 QQ NT 数据库，完成多格式清洗、去重、PII 脱敏和对话切分，构建 LLaMA-Factory 可用的 SFT 训练集，并用规则与 LLM 双路质量打分。数据只保留在本地，不公开原始内容。" data-tags="Python,SQLCipher,SFT,数据工程,PII 脱敏">
               <button class="project-open" type="button" aria-label="查看聊天记录 SFT 数据管线">
                 <div class="project-image image-sft">
-                  <img src="assets/project-sft.svg" alt="聊天消息经过清洗、脱敏并进入 SFT 数据集的管线图" width="1200" height="900" loading="lazy" />
+                  <img src="assets/project-sft.svg" alt="消息经清洗、脱敏进入 SFT 训练集的管线工程制图" width="1200" height="900" loading="lazy" />
                   <span class="project-number mono">04 / DATA</span><span class="project-image-note mono">SFT · PRIVATE PIPELINE</span><span class="project-open-icon"><i data-lucide="arrow-up-right"></i></span>
                 </div>
                 <div class="project-meta mono"><span>DATA PIPELINE</span><span>LLM</span></div>
@@ -338,8 +330,8 @@
             <article class="project-supplement" data-category="ai" data-detail="基于公开文献数据，使用 RDKit 分子描述符与机器学习预测磷矿浮选回收率和品位，支持候选捕收剂粗筛，并提供 SHAP 可解释性分析。" data-tags="RDKit,随机森林,SHAP,QSAR">
               <button class="project-open" type="button" aria-label="查看浮选 QSAR 定向筛选模型">
                 <div class="project-image image-qsar">
-                  <img src="assets/project-qsar.svg" alt="分子结构节点与回收率预测曲线组成的 QSAR 模型图" width="1200" height="900" loading="lazy" />
-                  <span class="project-number mono">04 / AI</span><span class="project-image-note mono">QSAR · SHAP</span><span class="project-open-icon"><i data-lucide="arrow-up-right"></i></span>
+                  <img src="assets/project-qsar.svg" alt="分子结构与浮选回收率预测曲线的工程制图，标注 LOOCV MAE 12.3pp" width="1200" height="900" loading="lazy" />
+                  <span class="project-number mono">05 / AI</span><span class="project-image-note mono">QSAR · SHAP</span><span class="project-open-icon"><i data-lucide="arrow-up-right"></i></span>
                 </div>
                 <div class="project-meta mono"><span>MOLECULAR ML</span><span>PYTHON</span></div>
                 <h3>从分子结构，猜下一种配方</h3>
@@ -347,11 +339,11 @@
                 <p class="project-proof mono"><strong>12.3pp</strong> RF LOOCV MAE · n=30 · SHAP</p>
               </button>
             </article>
-            <article class="project-supplement" data-category="embedded" data-detail="ESP32-S3 主控的室内环境与人员活动测量终端，自设计 KiCad 载板，接入 DHT11、HC-SR501、DS1302 与 OLED，打通传感器采集、显示与硬件调试链路。" data-tags="ESP32-S3,ESP-IDF,KiCad,传感器">
+            <article class="project-supplement project-wide" data-category="embedded" data-detail="ESP32-S3 主控的室内环境与人员活动测量终端，自设计 KiCad 载板，接入 DHT11、HC-SR501、DS1302 与 OLED，打通传感器采集、显示与硬件调试链路。" data-tags="ESP32-S3,ESP-IDF,KiCad,传感器">
               <button class="project-open" type="button" aria-label="查看智能测量终端">
                 <div class="project-image image-terminal">
-                  <img src="assets/project-terminal.svg" alt="ESP32-S3 测量终端、传感器与 OLED 结构图" width="1200" height="900" loading="lazy" />
-                  <span class="project-number mono">05 / HARDWARE</span><span class="project-image-note mono">ESP32-S3 · PCB</span><span class="project-open-icon"><i data-lucide="arrow-up-right"></i></span>
+                  <img src="assets/project-terminal.svg" alt="ESP32-S3 载板工程制图：模块、OLED、PIR、RTC 与走线" width="1200" height="900" loading="lazy" />
+                  <span class="project-number mono">06 / HARDWARE</span><span class="project-image-note mono">ESP32-S3 · PCB</span><span class="project-open-icon"><i data-lucide="arrow-up-right"></i></span>
                 </div>
                 <div class="project-meta mono"><span>SMART INSTRUMENT</span><span>ESP-IDF</span></div>
                 <h3>把环境，读成一组可靠数据</h3>

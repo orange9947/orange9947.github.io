@@ -1,0 +1,10 @@
+本目录字体均为 SIL Open Font License 1.1 授权，本地打包、离线可用。
+
+- space-grotesk-latin-500/700.woff2
+  Space Grotesk © Florian Karsten，OFL 1.1
+  来源：jsDelivr fontsource（latin 子集）
+- ibm-plex-mono-latin-400/600.woff2
+  IBM Plex Mono © IBM Corp.，OFL 1.1
+  来源：jsDelivr fontsource（latin 子集）
+
+OFL 1.1 全文：https://openfontlicense.org

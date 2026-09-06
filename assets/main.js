@@ -12,6 +12,11 @@
   var menuButton = document.querySelector(".menu-toggle");
   var mobileNav = document.getElementById("mobile-nav");
   var siteHeader = document.querySelector(".site-header");
+  function updateHeaderState() {
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 10);
+  }
+  updateHeaderState();
+  window.addEventListener("scroll", updateHeaderState, { passive: true });
   function setMenu(open, returnFocus) {
     mobileNav.hidden = !open;
     menuButton.setAttribute("aria-expanded", String(open));
@@ -219,24 +224,48 @@
     "IntersectionObserver" in window &&
     !window.matchMedia("(prefers-reduced-motion: reduce)").matches
   ) {
-    var observer = new IntersectionObserver(
+    var revealTargets = Array.from(
+      document.querySelectorAll(
+        ".project-item, .project-supplement, .about-intro, .experience, .explore-row",
+      ),
+    );
+    var revealObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
+            revealObserver.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.07 },
     );
-    document
-      .querySelectorAll(
-        ".project-item, .project-supplement, .about-intro, .experience, .explore-row",
-      )
-      .forEach(function (element) {
-        element.classList.add("reveal-ready");
-        observer.observe(element);
+    revealTargets.forEach(function (element) {
+      element.classList.add("reveal-ready");
+      revealObserver.observe(element);
+    });
+    // IO 在合成器高负载下可能漏报；用短周期扫描兜底，全部显示后自动停止。
+    var revealInterval = null;
+    function revealPass() {
+      var viewportBottom =
+        (window.innerHeight || document.documentElement.clientHeight) * 1.02;
+      var remaining = false;
+      revealTargets.forEach(function (element) {
+        if (element.classList.contains("is-visible")) return;
+        if (element.getBoundingClientRect().top < viewportBottom) {
+          element.classList.add("is-visible");
+          revealObserver.unobserve(element);
+        } else {
+          remaining = true;
+        }
       });
+      if (!remaining && revealInterval) {
+        window.clearInterval(revealInterval);
+        revealInterval = null;
+      }
+    }
+    revealInterval = window.setInterval(revealPass, 300);
+    window.addEventListener("scroll", revealPass, { passive: true });
+    revealPass();
   }
 })();

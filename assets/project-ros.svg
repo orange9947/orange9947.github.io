@@ -1,1 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900"><rect width="1200" height="900" fill="#17211f"/><path d="M150 180h900v500H150z" fill="none" stroke="#8de4d0" stroke-width="8"/><path d="M260 250h420v110H410v170h390v110H260M800 250h150v280H800" fill="none" stroke="#506a65" stroke-width="24"/><path d="M315 620c180-170 240-110 350-250s180-75 280-30" fill="none" stroke="#ff5a36" stroke-width="10" stroke-dasharray="18 15"/><g fill="#ff5a36"><circle cx="315" cy="620" r="18"/><circle cx="665" cy="370" r="18"/><circle cx="945" cy="340" r="18"/></g><rect x="600" y="285" width="110" height="70" rx="12" fill="#8de4d0"/><circle cx="625" cy="365" r="18" fill="#8de4d0"/><circle cx="685" cy="365" r="18" fill="#8de4d0"/><text x="70" y="790" fill="#edf3ed" font-family="monospace" font-size="30" letter-spacing="5">ROS · TEB · GAZEBO</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Tianracer 赛道与路径规划工程制图：赛道边界、中心线与 racing line">
+  <defs>
+    <pattern id="g40" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#1b2534" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+    <pattern id="g200" width="200" height="200" patternUnits="userSpaceOnUse">
+      <path d="M200 0H0v200" fill="none" stroke="#1b2534" stroke-opacity=".09" stroke-width="1"/>
+    </pattern>
+    <marker id="arrO" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0 0l10 5-10 5z" fill="#ff5a36"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="900" fill="#f7f4ec"/>
+  <rect width="1200" height="900" fill="url(#g40)"/>
+  <rect width="1200" height="900" fill="url(#g200)"/>
+
+  <!-- 顶部注释 + 航点引线 -->
+  <rect x="170" y="152" width="9" height="9" fill="#ff5a36"/>
+  <text x="190" y="166" font-family="'IBM Plex Mono',Consolas,monospace" font-size="14" letter-spacing="3" fill="#1b2534" fill-opacity=".72">F1TENTH / L0 → L3 / TEB LOCAL PLANNER</text>
+  <line x1="600" y1="284" x2="640" y2="192" stroke="#1b2534" stroke-width="1.1" stroke-dasharray="4 4" stroke-opacity=".6"/>
+
+  <!-- 赛道三层边界 -->
+  <rect x="170" y="220" width="860" height="480" rx="150" fill="none" stroke="#1b2534" stroke-width="3.4"/>
+  <rect x="214" y="264" width="772" height="392" rx="122" fill="none" stroke="#1b2534" stroke-width="1.6" stroke-dasharray="12 8" stroke-opacity=".55"/>
+  <rect x="258" y="308" width="684" height="304" rx="95" fill="none" stroke="#1b2534" stroke-width="3"/>
+
+  <!-- Racing line -->
+  <rect x="240" y="282" width="720" height="356" rx="108" fill="none" stroke="#ff5a36" stroke-width="3"/>
+
+  <!-- 起终点格纹 -->
+  <g fill="#1b2534">
+    <rect x="580" y="630" width="13" height="13"/><rect x="606" y="630" width="13" height="13"/>
+    <rect x="593" y="643" width="13" height="13"/><rect x="619" y="643" width="13" height="13"/>
+    <rect x="580" y="656" width="13" height="13"/><rect x="606" y="656" width="13" height="13"/>
+    <rect x="593" y="669" width="13" height="13"/><rect x="619" y="669" width="13" height="13"/>
+  </g>
+  <text x="600" y="716" text-anchor="middle" font-family="'IBM Plex Mono',Consolas,monospace" font-size="12" letter-spacing="2" fill="#1b2534" fill-opacity=".6">START</text>
+
+  <!-- 航点 -->
+  <g fill="#ff5a36">
+    <circle cx="600" cy="282" r="8"/>
+    <circle cx="240" cy="460" r="8"/>
+    <circle cx="330" cy="330" r="8"/>
+  </g>
+  <circle cx="600" cy="638" r="8" fill="none" stroke="#ff5a36" stroke-width="2.4"/>
+
+  <!-- 赛车（三角形 + 航向） -->
+  <path d="M960 402l16 30h-32z" fill="#1b2534"/>
+  <line x1="960" y1="398" x2="960" y2="360" stroke="#ff5a36" stroke-width="2.2" stroke-dasharray="5 5" marker-end="url(#arrO)"/>
+  <text x="976" y="366" font-family="'IBM Plex Mono',Consolas,monospace" font-size="12" fill="#ff5a36">v</text>
+
+  <!-- 分段速度标注 -->
+  <g font-family="'IBM Plex Mono',Consolas,monospace" font-size="12" fill="#1b2534" fill-opacity=".72">
+    <text x="262" y="452">S1</text>
+    <text x="586" y="270">S2</text>
+    <text x="330" y="316">S3</text>
+  </g>
+
+  <!-- 轴向尺寸 -->
+  <g stroke="#1b2534" stroke-width="1.2">
+    <line x1="170" y1="726" x2="170" y2="756"/>
+    <line x1="1030" y1="726" x2="1030" y2="756"/>
+  </g>
+  <line x1="176" y1="748" x2="1024" y2="748" stroke="#1b2534" stroke-width="1.2" stroke-dasharray="4 4"/>
+
+  <text x="170" y="796" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".55">FIG. 03 / RACING LINE</text>
+  <text x="1030" y="796" text-anchor="end" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".55">GAZEBO SIM</text>
+</svg>
