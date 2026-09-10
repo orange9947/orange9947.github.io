@@ -1062,18 +1062,18 @@ h2 {
   color: var(--mint);
 }
 
-/* ---------------- explore ---------------- */
-.explore {
-  background: #e3eae2;
+/* ---------------- side systems (merged into projects) ---------------- */
+.side-systems {
+  margin-top: 64px;
 }
-.explore .section-heading {
-  margin-bottom: 40px;
+.side-systems .section-index {
+  margin-bottom: 10px;
 }
 .explore-row {
   display: flex;
   align-items: center;
   gap: 27px;
-  border-top: 1px solid #b9c6bc;
+  border-top: 1px solid var(--line);
   min-height: 122px;
   padding: 23px 6px;
   transition:
@@ -1081,10 +1081,10 @@ h2 {
     background 0.25s;
 }
 .explore-row:last-of-type {
-  border-bottom: 1px solid #b9c6bc;
+  border-bottom: 1px solid var(--line);
 }
 .explore-row:hover {
-  background: #d3e0d6;
+  background: #e9e6d8;
   padding-inline: 18px;
 }
 .explore-index {
@@ -1640,12 +1640,15 @@ dialog::backdrop {
     width: 30px;
   }
   .hero-inner {
-    height: clamp(570px, calc(100svh - 234px), 640px);
-    min-height: 570px;
+    height: auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding-block: 30px 14px;
   }
   .hero-copy {
     width: 100%;
-    padding-top: 30px;
+    padding-top: 0;
   }
   .eyebrow {
     font-size: 8.5px;
@@ -1685,10 +1688,11 @@ dialog::backdrop {
     gap: 9px;
   }
   .hero-scene {
+    position: relative;
+    inset: auto;
     width: 100%;
-    height: calc(100% - 299px);
-    right: -3%;
-    top: 265px;
+    height: clamp(300px, 88vw, 380px);
+    margin-top: 14px;
   }
   .scene-heading {
     display: none;
@@ -1697,9 +1701,14 @@ dialog::backdrop {
     display: none;
   }
   .scene-toolbar {
-    bottom: 36px;
-    right: 0;
+    position: static;
+    align-self: flex-end;
+    margin-top: 10px;
     gap: 0;
+  }
+  .hero-bottom {
+    position: static;
+    margin-top: 12px;
   }
   .scene-toolbar .icon-button {
     width: 30px;
@@ -1877,9 +1886,6 @@ dialog::backdrop {
     font-size: 12px;
     gap: 10px 10px;
   }
-  .explore .section-heading {
-    margin-bottom: 26px;
-  }
   .explore-row {
     gap: 15px;
     min-height: 104px;
@@ -2003,9 +2009,6 @@ dialog::backdrop {
   .hero-description {
     max-width: 250px;
   }
-  .hero-scene {
-    top: 272px;
-  }
   .hero-bottom .mono {
     font-size: 7px;
   }
@@ -2035,12 +2038,8 @@ dialog::backdrop {
 
 /* ---------------- short viewports ---------------- */
 @media (max-width: 639px) and (max-height: 740px) {
-  .hero-inner {
-    height: 518px;
-    min-height: 518px;
-  }
   .hero-copy {
-    padding-top: 22px;
+    padding-top: 0;
   }
   .hero h1 {
     margin-top: 6px;
@@ -2053,14 +2052,13 @@ dialog::backdrop {
     margin-top: 13px;
   }
   .hero-scene {
-    top: 235px;
-    height: calc(100% - 282px);
+    height: clamp(230px, 66vw, 290px);
+    margin-top: 10px;
   }
 }
 @media (max-width: 639px) and (max-height: 690px) {
-  .hero-inner {
-    height: 480px;
-    min-height: 480px;
+  .hero-scene {
+    height: clamp(200px, 58vw, 250px);
   }
   .projects {
     padding-top: 40px;
