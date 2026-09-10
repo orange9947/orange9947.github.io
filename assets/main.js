@@ -107,6 +107,17 @@
             element.textContent = tag;
             tags.appendChild(element);
           });
+        var highlights = document.getElementById("dialog-highlights");
+        highlights.replaceChildren();
+        var items = (project.dataset.highlights || "")
+          .split("|")
+          .filter(Boolean);
+        highlights.hidden = items.length === 0;
+        items.forEach(function (item) {
+          var li = document.createElement("li");
+          li.textContent = item;
+          highlights.appendChild(li);
+        });
         dialog.showModal();
         dialog.scrollTop = 0;
         document.body.classList.add("modal-open");

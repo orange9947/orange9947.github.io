@@ -315,7 +315,7 @@
                 <p class="project-proof mono"><strong>L0–L3</strong> complete · 3 TEB parameter sets</p>
               </button>
             </article>
-            <article class="project-supplement" data-category="ai" data-detail="本地解密微信与 QQ NT 数据库，完成多格式清洗、去重、PII 脱敏和对话切分，构建 LLaMA-Factory 可用的 SFT 训练集，并用规则与 LLM 双路质量打分。数据只保留在本地，不公开原始内容。" data-tags="Python,SQLCipher,SFT,数据工程,PII 脱敏">
+            <article class="project-supplement" data-category="ai" data-detail="面向个性化微调的数据工程实践：本地解密微信与 QQ NT 数据库，完成多格式清洗、精确去重、PII 脱敏和按时间窗的对话切分，按 WeClone 口径构建 LLaMA-Factory 可用的 SFT 训练集，并以规则与 LLM 双路对样本质量打分。全链路只在本机运行，原始内容不公开。" data-highlights="806 万条原始消息（微信 58.6 万 + QQ 748 万）→ 24,729 条 SFT 样本|时间窗对话切分、精确去重与 PII 脱敏，规则 + LLM 双路质量打分|密钥即用即删、数据不出本机，合规设计优先于功能|10 个脚本约 3,000 行，9 次规范提交，README 记录每次实跑数字与踩坑" data-tags="Python,SQLCipher,PyWxDump,LLaMA-Factory,数据工程,PII 脱敏">
               <button class="project-open" type="button" aria-label="查看聊天记录 SFT 数据管线">
                 <div class="project-image image-sft">
                   <img src="assets/project-sft.svg" alt="消息经清洗、脱敏进入 SFT 训练集的管线工程制图" width="1200" height="900" loading="lazy" />
@@ -324,10 +324,10 @@
                 <div class="project-meta mono"><span>DATA PIPELINE</span><span>LLM</span></div>
                 <h3>把聊天记录，变成可训练数据</h3>
                 <p class="project-summary">聊天记录 SFT 数据管线</p>
-                <p class="project-proof mono"><strong>8.1M</strong> messages → 24,729 SFT samples · private pipeline</p>
+                <p class="project-proof mono"><strong>8.1M</strong> messages → 24,729 samples · 规则 + LLM 双路质检</p>
               </button>
             </article>
-            <article class="project-supplement" data-category="ai" data-detail="基于公开文献数据，使用 RDKit 分子描述符与机器学习预测磷矿浮选回收率和品位，支持候选捕收剂粗筛，并提供 SHAP 可解释性分析。" data-tags="RDKit,随机森林,SHAP,QSAR">
+            <article class="project-supplement" data-category="ai" data-detail="面向磷矿浮选的候选捕收剂粗筛模型：基于公开文献数据，用 RDKit 分子描述符与随机森林预测回收率与品位，SHAP 解释特征贡献。全程数据可溯源、结论可复现，并诚实标注样本规模带来的模型局限。" data-highlights="39 条逐条可溯源的文献数据集，v1→v3 三轮 git 迭代|随机森林 LOOCV MAE 12.3pp，优于 Ridge 基线 17.7pp|SHAP 解释特征贡献，产出单文件离线 HTML 交互页|如实标注 n=30 样本规模与剂量主效应等局限" data-tags="RDKit,随机森林,SHAP,QSAR,scikit-learn,可解释性">
               <button class="project-open" type="button" aria-label="查看浮选 QSAR 定向筛选模型">
                 <div class="project-image image-qsar">
                   <img src="assets/project-qsar.svg" alt="分子结构与浮选回收率预测曲线的工程制图，标注 LOOCV MAE 12.3pp" width="1200" height="900" loading="lazy" />
@@ -336,7 +336,7 @@
                 <div class="project-meta mono"><span>MOLECULAR ML</span><span>PYTHON</span></div>
                 <h3>从分子结构，猜下一种配方</h3>
                 <p class="project-summary">浮选 QSAR 定向筛选模型</p>
-                <p class="project-proof mono"><strong>12.3pp</strong> RF LOOCV MAE · n=30 · SHAP</p>
+                <p class="project-proof mono"><strong>12.3pp</strong> LOOCV MAE · 优于 Ridge 17.7pp · SHAP</p>
               </button>
             </article>
             <article class="project-supplement project-wide" data-category="embedded" data-detail="ESP32-S3 主控的室内环境与人员活动测量终端，自设计 KiCad 载板，接入 DHT11、HC-SR501、DS1302 与 OLED，打通传感器采集、显示与硬件调试链路。" data-tags="ESP32-S3,ESP-IDF,KiCad,传感器">
@@ -532,6 +532,7 @@
         <p id="dialog-category" class="section-index mono"></p>
         <h2 id="dialog-title"></h2>
         <p id="dialog-description"></p>
+        <ul id="dialog-highlights" class="dialog-highlights" hidden></ul>
         <div id="dialog-tags" class="dialog-tags"></div>
         <a
           class="text-link"

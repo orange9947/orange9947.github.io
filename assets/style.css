@@ -1346,6 +1346,30 @@ dialog::backdrop {
   line-height: 1.95;
   margin-top: 16px;
 }
+.dialog-highlights {
+  list-style: none;
+  display: grid;
+  gap: 11px;
+  margin: 20px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--line);
+}
+.dialog-highlights li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #4d5866;
+}
+.dialog-highlights li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.72em;
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+}
 .dialog-tags {
   display: flex;
   flex-wrap: wrap;
