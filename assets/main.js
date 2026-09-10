@@ -1,6 +1,33 @@
 (function () {
   "use strict";
 
+  // three.js 体积大且仅 3D 首屏需要：探测到 WebGL 再按需注入，否则走静态图降级。
+  var heroCanvas = document.getElementById("sculpture-canvas");
+  var webglOK = false;
+  try {
+    var probe = document.createElement("canvas");
+    webglOK = !!(
+      window.WebGLRenderingContext &&
+      (probe.getContext("webgl2") ||
+        probe.getContext("webgl") ||
+        probe.getContext("experimental-webgl"))
+    );
+  } catch (_) {
+    webglOK = false;
+  }
+  if (heroCanvas && webglOK) {
+    var threeScript = document.createElement("script");
+    threeScript.src = "assets/vendor/three.min.js";
+    threeScript.onload = function () {
+      var sceneScript = document.createElement("script");
+      sceneScript.src = "assets/scene.js";
+      document.head.appendChild(sceneScript);
+    };
+    document.head.appendChild(threeScript);
+  } else if (heroCanvas) {
+    heroCanvas.hidden = true;
+  }
+
   function refreshIcons() {
     if (window.lucide)
       window.lucide.createIcons({ attrs: { "aria-hidden": "true" } });

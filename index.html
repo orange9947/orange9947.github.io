@@ -8,11 +8,25 @@
       name="description"
       content="orange 的 2026 秋招工程档案：嵌入式、协议逆向、机器人与 AI 项目。"
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://orange9947.github.io/" />
+    <meta property="og:title" content="orange · 2026 秋招工程档案" />
+    <meta
+      property="og:description"
+      content="八件独立立项的工程作品：嵌入式、协议逆向、机器人、数据与 AI，每件都有完整的做法与实测结果。"
+    />
+    <meta
+      property="og:image"
+      content="https://orange9947.github.io/assets/og-image.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>orange · 2026 秋招工程档案</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5502b'/%3E%3Ctext x='30' y='46' font-family='monospace' font-size='38' font-weight='700' text-anchor='middle' fill='%23f1eee3'%3Eo%3C/text%3E%3Ccircle cx='47' cy='40' r='4' fill='%23f1eee3'/%3E%3C/svg%3E"
+    />
     <link rel="stylesheet" href="assets/style.css" />
-    <script defer src="assets/vendor/three.min.js"></script>
     <script defer src="assets/vendor/lucide.min.js"></script>
-    <script defer src="assets/scene.js"></script>
     <script defer src="assets/main.js"></script>
   </head>
   <body>
@@ -59,24 +73,24 @@
               先把机器做稳，<br />再把系统做宽<span class="accent">。</span>
             </p>
             <p class="hero-description">
-              3D 打印实习是主线，Klipper 运动学与调度是现场。<br />主线之外，继续做协议、机器人、数据与 AI 系统。
+              打印机、相机、赛车、大模型——八件作品独立立项、各自完整。<br />嵌入式、协议、机器人、数据与 AI，每个领域都做到能讲清原理与结果。
             </p>
             <div class="hero-actions">
               <a class="button button-dark" href="#projects"
                 >查看项目 <i data-lucide="arrow-down-right"></i
               ></a>
               <a class="text-link" href="#about"
-                >我的方法 <i data-lucide="arrow-up-right"></i
+                >关于我 <i data-lucide="arrow-up-right"></i
               ></a>
             </div>
           </div>
           <div class="hero-scene" aria-label="朱红色连续曲面 3D 打印雕塑">
             <img
               id="scene-fallback"
-              src="assets/sculpture-fallback.png"
+              src="assets/sculpture-fallback.jpg"
               alt="具有精细层纹的朱红色连续曲面雕塑"
-              width="1200"
-              height="1200"
+              width="960"
+              height="820"
               fetchpriority="high"
             />
             <canvas
@@ -176,7 +190,7 @@
           <div class="snapshot-label"><span class="mono">RECRUITING SNAPSHOT</span><strong>把经历<br />变成证据。</strong></div>
           <div class="snapshot-stat"><strong>08</strong><span>项目档案</span></div>
           <div class="snapshot-stat"><strong>02</strong><span>段实习</span></div>
-          <div class="snapshot-stat"><strong>10K<span>+</span></strong><span>行工程代码</span></div>
+          <div class="snapshot-stat"><strong>04</strong><span title="四头 FDM / Z6II 真机 / ESP32-S3 / BLE">实机验证</span></div>
           <div class="snapshot-roles"><span class="mono">TARGET ROLES</span><p>MCU / AIoT / Linux 网关 / ROS</p></div>
         </div>
       </section>
@@ -190,11 +204,11 @@
         <div class="shell">
           <div class="section-heading">
             <div>
-              <p class="section-index mono">01 / PRINTING INTERNSHIP + SYSTEMS</p>
+              <p class="section-index mono">01 / PROJECT ARCHIVE</p>
               <h2 id="projects-title">
                 先做实机，再做系统<span class="accent">。</span>
               </h2>
-              <p class="section-lede">3D 打印实习放在最前面；后面的项目，是同一套“把系统做出来、测出来、讲清楚”的延伸。</p>
+              <p class="section-lede">八件作品横跨四个领域，各自独立立项、独立交付；点开任一张卡，都有完整的做法与实测结果。</p>
             </div>
             <div class="project-stats mono" aria-label="项目概览">
               <span><b>08</b> 项目档案</span><span><b>03</b> 技术方向</span><span><b>02</b> 段实习</span>
@@ -233,7 +247,7 @@
             >
           </div>
           <div class="project-grid">
-            <article class="project-item project-featured" data-category="embedded" data-detail="在 3D 打印实习中参与 Klipper 运动学算法与固件开发，围绕四头 FDM 打印机的任务调度、prime 宏和运动链路做二次开发与架构研读，解决复杂模型打印中的稳定性问题。" data-jd="运动控制,固件二次开发,任务调度,代码架构分析,Python" data-tags="Klipper,运动学,四头 FDM,调度优化">
+            <article class="project-item project-featured" data-category="embedded" data-detail="承担四头 FDM 固件的核心开发：围绕 Klipper 运动链路二次开发，负责任务调度、prime 宏与多挤出头链路改造，解决复杂模型打印中的稳定性问题。" data-jd="运动控制,固件二次开发,任务调度,代码架构分析,Python" data-tags="Klipper,运动学,四头 FDM,调度优化">
               <button
                 class="project-open"
                 type="button"
@@ -255,7 +269,7 @@
                 </div>
                 <h3>让每一次运动，恰到好处</h3>
                 <p class="project-summary">3D 打印实习 · Klipper 运动学与调度</p>
-                <p class="project-proof mono"><strong>四头 FDM</strong> prime 宏与固件架构研读 · 实机问题闭环</p>
+                <p class="project-proof mono"><strong>四头 FDM</strong> prime 宏与运动链路改造 · 实机问题闭环</p>
               </button>
             </article>
             <article class="project-item" data-category="embedded" data-detail="逆向 Nikon SnapBridge APK 后独立实现 PTP/IP 协议客户端，完成 NEF/JPG 无线传图与远程拍摄 Android 原型。针对不稳定的无线链路做断点续传、失败回退与自动重连，保证长传与连拍场景下的可靠性；包含本地 fake 相机端到端测试与 Z6II 真机烟测。" data-highlights="逆向 SnapBridge v2.13.3，不依赖官方任何代码|断点续传 + 失败回退标准 PTP 捕获指令，弱网下不丢传|后台保活与自动重连，连拍长传不掉线|本地 fake 相机端到端测试 + Z6II 真机烟测，行为可验证" data-jd="协议逆向,TCP/IP,Android,自动化测试,无线传输" data-tags="PTP/IP,Android,Kotlin,协议逆向,断点续传">
@@ -312,7 +326,7 @@
                 <p class="project-proof mono"><strong>L0–L3</strong> complete · 3 TEB parameter sets</p>
               </button>
             </article>
-            <article class="project-supplement" data-category="ai" data-detail="把『说话像我』做成一个真能聊的本地模型：806 万条 QQ/微信私聊经解密、清洗、脱敏、角色归并与边缘裁剪，构建成 WeClone 口径的 SFT 数据集；对 Qwen3.5-9B 做 QLoRA 微调，v1 已在本地 Ollama 常驻部署并实测风格在线，v2 全量训练中。交付形态为 llama-server 网页聊天 + OpenAI 兼容 API，数据、训练、部署、推理四层全部落在自己机器上。" data-highlights="806 万条原始消息 → v4 训练集 train 12,135 / valid 1,640|QLoRA 微调 Qwen3.5-9B：4bit 量化、LoRA r16 全线性层、3 epochs|看门狗 60s 心跳，停滞 180s 自动杀进程、从 checkpoint 续训|部署五步管线：合并 → 纯文本抽取 → MTP 注入 → Q8_0 GGUF → Ollama|DRY 采样 + repeat_penalty + num_predict 200，三层防御治复读|PII 脱敏覆盖身份证/密码/API key/银行卡，训练文件残留 0|踩坑实录 12 条：sharegpt 静默丢 75% 数据 → 边缘裁剪找回 98.7%" data-jd="大模型微调,SFT,LoRA/QLoRA,模型量化,推理部署,RAG 数据链路,隐私合规" data-tags="Python,LLaMA-Factory,QLoRA,Qwen3.5-9B,ROCm,数据工程,PII 脱敏">
+            <article class="project-supplement" data-category="ai" data-detail="数据来源声明：全部私聊数据仅来自本人 QQ 与微信账号，本地解密、本地训练、本地部署，不涉及任何第三方。把『说话像我』做成一个真能聊的本地模型：806 万条 QQ/微信私聊经解密、清洗、脱敏、角色归并与边缘裁剪，构建成 WeClone 口径的 SFT 数据集；对 Qwen3.5-9B 做 QLoRA 微调，v1 已在本地 Ollama 常驻部署并实测风格在线，v2 全量训练中。交付形态为 llama-server 网页聊天 + OpenAI 兼容 API，数据、训练、部署、推理四层全部落在自己机器上。" data-highlights="806 万条原始消息 → v4 训练集 train 12,135 / valid 1,640|QLoRA 微调 Qwen3.5-9B：4bit 量化、LoRA r16 全线性层、3 epochs|看门狗 60s 心跳，停滞 180s 自动杀进程、从 checkpoint 续训|部署五步管线：合并 → 纯文本抽取 → MTP 注入 → Q8_0 GGUF → Ollama|DRY 采样 + repeat_penalty + num_predict 200，三层防御治复读|PII 脱敏覆盖身份证/密码/API key/银行卡，训练文件残留 0|踩坑实录 12 条：sharegpt 静默丢 75% 数据 → 边缘裁剪找回 98.7%" data-jd="大模型微调,SFT,LoRA/QLoRA,模型量化,推理部署,RAG 数据链路,隐私合规" data-tags="Python,LLaMA-Factory,QLoRA,Qwen3.5-9B,ROCm,数据工程,PII 脱敏">
               <button class="project-open" type="button" aria-label="查看数字分身模型全链路">
                 <div class="project-image image-sft">
                   <img src="assets/project-sft.svg" alt="消息经清洗、脱敏进入 SFT 训练集的管线工程制图" width="1200" height="900" loading="lazy" />
@@ -345,7 +359,7 @@
                 <div class="project-meta mono"><span>SMART INSTRUMENT</span><span>ESP-IDF</span></div>
                 <h3>把环境，读成一组可靠数据</h3>
                 <p class="project-summary">智能测量终端</p>
-                <p class="project-proof mono"><strong>ESP32-S3</strong> + KiCad carrier · hardware整理中</p>
+                <p class="project-proof mono"><strong>ESP32-S3</strong> 自设计 KiCad 载板 · 采集/显示/调试链路打通</p>
               </button>
             </article>
             <article class="project-supplement" data-category="ai" data-detail="为本地 AI 工作流搭的算力底座：llama.cpp ROCm 版与 Ollama 双实例服务数字分身（OpenAI 兼容 API + 网页聊天）；训练与推理共用一张 RX 7900 XT，启动训练自动让出显存，看门狗 60s 心跳、停滞 180s 自动救援续训；Flask 控制台一页管理 loss 曲线与启停，NapCat/AstrBot、wxauto 双通道把模型接入 QQ 和微信。" data-highlights="llama.cpp ROCm 版 + Ollama 双实例：OpenAI 兼容 API + 网页聊天|训练/推理共用 19.8GB 显存：训练自动让位，看门狗 60s 心跳救援|Flask 控制台：进度、loss 曲线、启停与聊天服务开关一页管理|NapCat + AstrBot / wxauto 双通道，模型直连 QQ 与微信" data-jd="模型部署,推理服务,LLMOps,GPU 运维,PyTorch/ROCm" data-tags="本地大模型,AMD GPU,ROCm,推理服务,调度">
@@ -416,10 +430,10 @@
                 <span class="experience-date mono">2026.03 — 2026.09</span>
                 <h3>让机器，更进一步</h3>
                 <p class="experience-company">轻量智造（深圳）科技有限公司</p>
-                <p class="experience-role">Klipper 运动学算法 · 实习 / 四头固件架构研读</p>
+                <p class="experience-role">Klipper 运动学算法 · 实习 / 四头 FDM 固件核心开发</p>
               </article>
               <article class="experience-row">
-                <span class="experience-date mono">2025.05 — 2026.01</span>
+                <span class="experience-date mono">2025.07 — 2026.01</span>
                 <h3>从现实，到三维世界</h3>
                 <p class="experience-company">武汉中观自动化科技有限公司</p>
                 <p class="experience-role">3D 扫描仪验证 · 实习 / WiFi 6 传图与 RMS</p>
@@ -429,9 +443,9 @@
           <div id="skills" class="skills-strip">
             <p class="mono">TOOLS I THINK WITH</p>
             <div class="skill-list">
-              <span>C / C++</span><span>Python</span><span>Klipper</span
-              ><span>STM32 / ESP32</span><span>CAD</span
-              ><span>Linux / Git</span>
+              <span>C / C++</span><span>Python</span><span>STM32 / ESP32</span
+              ><span>Klipper</span><span>ROS</span><span>Linux / Git</span
+              ><span>LLaMA-Factory（QLoRA）</span><span>Ollama / llama.cpp</span>
             </div>
           </div>
         </div>
@@ -511,13 +525,6 @@
           <span class="dialog-jd-label mono">JD 匹配</span>
           <div id="dialog-jd-chips" class="dialog-jd-chips"></div>
         </div>
-        <a
-          class="text-link"
-          href="https://github.com/orange9947"
-          target="_blank"
-          rel="noopener noreferrer"
-          >GitHub 主页 <i data-lucide="arrow-up-right"></i
-        ></a>
       </div>
     </dialog>
   </body>
