@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="本地算力调度工程制图：任务队列、调度器与 GPU / Redis 计算单元">
+  <defs>
+    <pattern id="g40" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#1b2534" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+    <pattern id="g200" width="200" height="200" patternUnits="userSpaceOnUse">
+      <path d="M200 0H0v200" fill="none" stroke="#1b2534" stroke-opacity=".09" stroke-width="1"/>
+    </pattern>
+    <marker id="arrN" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0 0l10 5-10 5z" fill="#1b2534"/>
+    </marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0 0l10 5-10 5z" fill="#ff5a36"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="900" fill="#f7f4ec"/>
+  <rect width="1200" height="900" fill="url(#g40)"/>
+  <rect width="1200" height="900" fill="url(#g200)"/>
+
+  <!-- 顶部注释 -->
+  <rect x="170" y="152" width="9" height="9" fill="#ff5a36"/>
+  <text x="190" y="166" font-family="'IBM Plex Mono',Consolas,monospace" font-size="14" letter-spacing="3" fill="#1b2534" fill-opacity=".72">TASK SCHEDULING / LOCAL FIRST</text>
+
+  <!-- 任务队列 -->
+  <g fill="none" stroke="#1b2534" stroke-width="2.6">
+    <rect x="170" y="300" width="190" height="66" rx="4"/>
+    <rect x="170" y="412" width="190" height="66" rx="4"/>
+    <rect x="170" y="524" width="190" height="66" rx="4"/>
+  </g>
+  <g font-family="'IBM Plex Mono',Consolas,monospace" font-size="14" fill="#1b2534">
+    <text x="192" y="328">TASK A</text>
+    <text x="192" y="440">TASK B</text>
+    <text x="192" y="552">TASK C</text>
+  </g>
+  <g stroke="#1b2534" stroke-width="1.6" stroke-opacity=".55">
+    <line x1="192" y1="344" x2="330" y2="344"/>
+    <line x1="192" y1="456" x2="304" y2="456"/>
+    <line x1="192" y1="568" x2="330" y2="568"/>
+  </g>
+  <rect x="330" y="322" width="12" height="22" fill="#ff5a36"/>
+  <text x="170" y="640" font-family="'IBM Plex Mono',Consolas,monospace" font-size="12" letter-spacing="2" fill="#1b2534" fill-opacity=".6">QUEUE · OFFICE WORKLOADS</text>
+
+  <!-- 调度器 -->
+  <line x1="360" y1="333" x2="500" y2="408" stroke="#ff5a36" stroke-width="2.2" stroke-dasharray="7 6" marker-end="url(#arrO)"/>
+  <line x1="360" y1="445" x2="500" y2="445" stroke="#ff5a36" stroke-width="2.2" stroke-dasharray="7 6" marker-end="url(#arrO)"/>
+  <line x1="360" y1="557" x2="500" y2="482" stroke="#ff5a36" stroke-width="2.2" stroke-dasharray="7 6" marker-end="url(#arrO)"/>
+  <rect x="520" y="383" width="124" height="124" rx="8" fill="none" stroke="#1b2534" stroke-width="3.2"/>
+  <path d="M582 411l34 34-34 34-34-34z" fill="#8de4d0" fill-opacity=".5" stroke="#1b2534" stroke-width="2"/>
+  <text x="582" y="530" text-anchor="middle" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".7">SCHED</text>
+
+  <!-- AMD GPU 单元 -->
+  <line x1="644" y1="415" x2="756" y2="360" stroke="#ff5a36" stroke-width="2.4" marker-end="url(#arrO)"/>
+  <rect x="770" y="300" width="240" height="130" rx="6" fill="none" stroke="#1b2534" stroke-width="3.2"/>
+  <rect x="796" y="322" width="120" height="86" fill="none" stroke="#1b2534" stroke-width="1.8"/>
+  <g stroke="#1b2534" stroke-width="1.4" stroke-opacity=".7">
+    <line x1="810" y1="322" x2="810" y2="408"/>
+    <line x1="830" y1="322" x2="830" y2="408"/>
+    <line x1="850" y1="322" x2="850" y2="408"/>
+    <line x1="870" y1="322" x2="870" y2="408"/>
+    <line x1="890" y1="322" x2="890" y2="408"/>
+  </g>
+  <rect x="940" y="330" width="48" height="70" rx="4" fill="#ff5a36"/>
+  <g stroke="#1b2534" stroke-width="1.6">
+    <line x1="952" y1="322" x2="952" y2="314"/><line x1="972" y1="322" x2="972" y2="314"/>
+    <line x1="952" y1="400" x2="952" y2="408"/><line x1="972" y1="400" x2="972" y2="408"/>
+    <line x1="940" y1="344" x2="932" y2="344"/><line x1="940" y1="366" x2="932" y2="366"/><line x1="940" y1="388" x2="932" y2="388"/>
+    <line x1="988" y1="344" x2="996" y2="344"/><line x1="988" y1="366" x2="996" y2="366"/><line x1="988" y1="388" x2="996" y2="388"/>
+  </g>
+  <text x="770" y="462" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".7">AMD GPU · INFERENCE</text>
+
+  <!-- Redis 单元 -->
+  <line x1="644" y1="478" x2="756" y2="548" stroke="#1b2534" stroke-width="2" marker-end="url(#arrN)"/>
+  <g fill="none" stroke="#1b2534" stroke-width="3">
+    <path d="M770 560h240v96a120 22 0 0 1-240 0z"/>
+    <ellipse cx="890" cy="560" rx="120" ry="22"/>
+  </g>
+  <path d="M770 610a120 22 0 0 0 240 0" fill="none" stroke="#1b2534" stroke-width="1.6" stroke-dasharray="6 6"/>
+  <text x="890" y="700" text-anchor="middle" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".7">REDIS · CACHE / QUEUE</text>
+
+  <!-- 回路 -->
+  <path d="M890 724v26H582v-84" fill="none" stroke="#ff5a36" stroke-width="1.8" stroke-dasharray="5 6" marker-end="url(#arrO)"/>
+  <text x="700" y="770" font-family="'IBM Plex Mono',Consolas,monospace" font-size="12" fill="#ff5a36">CACHE HIT → REUSE</text>
+
+  <text x="170" y="766" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".55">FIG. 07 / LOCAL AI</text>
+  <text x="1030" y="766" text-anchor="end" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".55">OFFLINE READY</text>
+</svg>

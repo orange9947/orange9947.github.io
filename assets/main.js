@@ -237,7 +237,7 @@
   ) {
     var revealTargets = Array.from(
       document.querySelectorAll(
-        ".project-item, .project-supplement, .about-intro, .experience, .explore-row",
+        ".project-item, .project-supplement, .about-intro, .experience",
       ),
     );
     var revealObserver = new IntersectionObserver(

@@ -26,6 +26,7 @@
         <nav class="desktop-nav" aria-label="主导航">
           <a href="#projects"><span>01</span> 作品</a>
           <a href="#about"><span>02</span> 关于</a>
+          <a href="#contact"><span>03</span> 联系</a>
         </nav>
         <a class="header-contact" href="#contact"
           >聊聊想法 <i data-lucide="arrow-up-right"></i
@@ -176,7 +177,7 @@
       <section class="snapshot-band" aria-label="秋招快照">
         <div class="shell snapshot-grid">
           <div class="snapshot-label"><span class="mono">RECRUITING SNAPSHOT</span><strong>把经历<br />变成证据。</strong></div>
-          <div class="snapshot-stat"><strong>06</strong><span>项目档案</span></div>
+          <div class="snapshot-stat"><strong>08</strong><span>项目档案</span></div>
           <div class="snapshot-stat"><strong>02</strong><span>段实习</span></div>
           <div class="snapshot-stat"><strong>10K<span>+</span></strong><span>行工程代码</span></div>
           <div class="snapshot-roles"><span class="mono">TARGET ROLES</span><p>MCU / AIoT / Linux 网关 / ROS</p></div>
@@ -199,7 +200,7 @@
               <p class="section-lede">3D 打印实习放在最前面；后面的项目，是同一套“把系统做出来、测出来、讲清楚”的延伸。</p>
             </div>
             <div class="project-stats mono" aria-label="项目概览">
-              <span><b>06</b> 项目档案</span><span><b>03</b> 技术方向</span><span><b>02</b> 段实习</span>
+              <span><b>08</b> 项目档案</span><span><b>03</b> 技术方向</span><span><b>02</b> 段实习</span>
             </div>
           </div>
           <div class="project-filter" role="group" aria-label="作品分类">
@@ -209,7 +210,7 @@
               data-filter="all"
               aria-pressed="true"
             >
-              全部项目 <span>06</span>
+              全部项目 <span>08</span>
             </button>
             <button
               type="button"
@@ -217,7 +218,7 @@
               data-filter="embedded"
               aria-pressed="false"
             >
-              嵌入式 · 固件 <span>03</span>
+              嵌入式 · 固件 <span>04</span>
             </button>
             <button
               type="button"
@@ -228,10 +229,10 @@
               机器人 · ROS <span>01</span>
             </button>
             <button type="button" class="filter-button" data-filter="ai" aria-pressed="false">
-              AI · 数据 <span>02</span>
+              AI · 数据 <span>03</span>
             </button>
             <span id="filter-status" class="sr-only" aria-live="polite"
-              >显示全部 6 件项目</span
+              >显示全部 8 件项目</span
             >
           </div>
           <div class="project-grid">
@@ -338,7 +339,7 @@
                 <p class="project-proof mono"><strong>12.3pp</strong> LOOCV MAE · 优于 Ridge 17.7pp · SHAP</p>
               </button>
             </article>
-            <article class="project-supplement project-wide" data-category="embedded" data-detail="ESP32-S3 主控的室内环境与人员活动测量终端，自设计 KiCad 载板，接入 DHT11、HC-SR501、DS1302 与 OLED，打通传感器采集、显示与硬件调试链路。" data-tags="ESP32-S3,ESP-IDF,KiCad,传感器">
+            <article class="project-supplement" data-category="embedded" data-detail="ESP32-S3 主控的室内环境与人员活动测量终端，自设计 KiCad 载板，接入 DHT11、HC-SR501、DS1302 与 OLED，打通传感器采集、显示与硬件调试链路。" data-tags="ESP32-S3,ESP-IDF,KiCad,传感器">
               <button class="project-open" type="button" aria-label="查看智能测量终端">
                 <div class="project-image image-terminal">
                   <img src="assets/project-terminal.svg" alt="ESP32-S3 载板工程制图：模块、OLED、PIR、RTC 与走线" width="1200" height="900" loading="lazy" />
@@ -350,37 +351,30 @@
                 <p class="project-proof mono"><strong>ESP32-S3</strong> + KiCad carrier · hardware整理中</p>
               </button>
             </article>
-          </div>
-          <div class="side-systems">
-            <p class="section-index mono">主线之外 · OTHER SYSTEMS</p>
-            <a
-              class="explore-row"
-              href="https://github.com/orange9947"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><span class="explore-index mono">01</span
-              ><span class="explore-icon"><i data-lucide="cpu"></i></span>
-              <div class="explore-copy">
-                <h3>AI 办公与异构算力调度</h3>
-                <p>本地大模型 / AMD GPU 推理 / Redis</p>
-              </div>
-              <span class="explore-year mono">2024</span
-              ><i data-lucide="arrow-up-right"></i
-            ></a>
-            <a
-              class="explore-row"
-              href="https://github.com/orange9947"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><span class="explore-index mono">02</span
-              ><span class="explore-icon"><i data-lucide="radio"></i></span>
-              <div class="explore-copy">
-                <h3>BLE 协议逆向与 IoT 控制</h3>
-                <p>GATT 私有协议 / Android / RFID 联动</p>
-              </div>
-              <span class="explore-year mono">2025</span
-              ><i data-lucide="arrow-up-right"></i
-            ></a>
+            <article class="project-supplement" data-category="ai" data-detail="在本地环境部署大模型，跑通 AMD GPU 上的推理链路，并用 Redis 承担调度与缓存，把异构算力组合起来服务日常办公场景。" data-highlights="本地大模型部署，办公场景优先离线可用|AMD GPU 推理链路，异构算力组合|Redis 承担调度与缓存，任务按优先级排队" data-tags="本地大模型,AMD GPU,Redis,调度">
+              <button class="project-open" type="button" aria-label="查看 AI 办公与异构算力调度">
+                <div class="project-image image-localsrv">
+                  <img src="assets/project-localsrv.svg" alt="本地算力调度工程制图：任务队列经调度器分发到 AMD GPU 与 Redis" width="1200" height="900" loading="lazy" />
+                  <span class="project-number mono">07 / AI</span><span class="project-image-note mono">LOCAL LLM · SCHEDULING</span><span class="project-open-icon"><i data-lucide="arrow-up-right"></i></span>
+                </div>
+                <div class="project-meta mono"><span>LOCAL AI</span><span>INFRA</span></div>
+                <h3>让本地算力，各尽其用</h3>
+                <p class="project-summary">AI 办公与异构算力调度</p>
+                <p class="project-proof mono"><strong>LLM</strong> 本地推理 · AMD GPU · Redis 调度</p>
+              </button>
+            </article>
+            <article class="project-supplement" data-category="embedded" data-detail="Android 端直连 BLE 设备，逆向 GATT 私有协议后向指定特征值写入 0x02 / 0x03，实现开关与自动档控制，并联动 RFID 做场景触发。" data-highlights="GATT 私有协议逆向，定位控制特征值|写入 0x02 / 0x03，实现开关与自动档切换|RFID 联动触发，Android 端约 300 行 Java" data-tags="BLE,GATT,Android,协议逆向,IoT">
+              <button class="project-open" type="button" aria-label="查看 BLE 协议逆向与 IoT 控制">
+                <div class="project-image image-ble">
+                  <img src="assets/project-ble.svg" alt="BLE 协议逆向工程制图：手机经 GATT 特征值写入控制风扇" width="1200" height="900" loading="lazy" />
+                  <span class="project-number mono">08 / IOT</span><span class="project-image-note mono">BLE · GATT · ANDROID</span><span class="project-open-icon"><i data-lucide="arrow-up-right"></i></span>
+                </div>
+                <div class="project-meta mono"><span>PROTOCOL</span><span>IOT</span></div>
+                <h3>把私有协议，拆成可控指令</h3>
+                <p class="project-summary">BLE 协议逆向与 IoT 控制</p>
+                <p class="project-proof mono"><strong>0x02</strong> / 0x03 特征值写入 · GATT 直连</p>
+              </button>
+            </article>
           </div>
           <p class="project-footnote mono">
             A SELECTION OF WORK &amp; EXPERIMENTS
