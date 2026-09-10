@@ -118,6 +118,18 @@
           li.textContent = item;
           highlights.appendChild(li);
         });
+        var jdRow = document.getElementById("dialog-jd");
+        var jdChips = document.getElementById("dialog-jd-chips");
+        jdChips.replaceChildren();
+        var jdItems = (project.dataset.jd || "")
+          .split(",")
+          .filter(Boolean);
+        jdRow.hidden = jdItems.length === 0;
+        jdItems.forEach(function (keyword) {
+          var chip = document.createElement("span");
+          chip.textContent = keyword;
+          jdChips.appendChild(chip);
+        });
         dialog.showModal();
         dialog.scrollTop = 0;
         document.body.classList.add("modal-open");

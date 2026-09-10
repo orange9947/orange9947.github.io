@@ -236,7 +236,7 @@
             >
           </div>
           <div class="project-grid">
-            <article class="project-item project-featured" data-category="embedded" data-detail="在 3D 打印实习中参与 Klipper 运动学算法与固件开发，围绕四头 FDM 打印机的任务调度、prime 宏和运动链路做二次开发与架构研读，解决复杂模型打印中的稳定性问题。" data-tags="Klipper,运动学,四头 FDM,调度优化">
+            <article class="project-item project-featured" data-category="embedded" data-detail="在 3D 打印实习中参与 Klipper 运动学算法与固件开发，围绕四头 FDM 打印机的任务调度、prime 宏和运动链路做二次开发与架构研读，解决复杂模型打印中的稳定性问题。" data-jd="运动控制,固件二次开发,任务调度,代码架构分析,Python" data-tags="Klipper,运动学,四头 FDM,调度优化">
               <button
                 class="project-open"
                 type="button"
@@ -261,7 +261,7 @@
                 <p class="project-proof mono"><strong>四头 FDM</strong> prime 宏与固件架构研读 · 实机问题闭环</p>
               </button>
             </article>
-            <article class="project-item" data-category="embedded" data-detail="逆向 Nikon SnapBridge APK 后独立实现 PTP/IP 协议客户端，完成 NEF/JPG 无线传图与远程拍摄 Android 原型。针对不稳定的无线链路做断点续传、失败回退与自动重连，保证长传与连拍场景下的可靠性；包含本地 fake 相机端到端测试与 Z6II 真机烟测。" data-highlights="逆向 SnapBridge v2.13.3，不依赖官方任何代码|断点续传 + 失败回退标准 PTP 捕获指令，弱网下不丢传|后台保活与自动重连，连拍长传不掉线|本地 fake 相机端到端测试 + Z6II 真机烟测，行为可验证" data-tags="PTP/IP,Android,Kotlin,协议逆向,断点续传">
+            <article class="project-item" data-category="embedded" data-detail="逆向 Nikon SnapBridge APK 后独立实现 PTP/IP 协议客户端，完成 NEF/JPG 无线传图与远程拍摄 Android 原型。针对不稳定的无线链路做断点续传、失败回退与自动重连，保证长传与连拍场景下的可靠性；包含本地 fake 相机端到端测试与 Z6II 真机烟测。" data-highlights="逆向 SnapBridge v2.13.3，不依赖官方任何代码|断点续传 + 失败回退标准 PTP 捕获指令，弱网下不丢传|后台保活与自动重连，连拍长传不掉线|本地 fake 相机端到端测试 + Z6II 真机烟测，行为可验证" data-jd="协议逆向,TCP/IP,Android,自动化测试,无线传输" data-tags="PTP/IP,Android,Kotlin,协议逆向,断点续传">
               <button
                 class="project-open"
                 type="button"
@@ -288,7 +288,7 @@
                 <p class="project-proof mono"><strong>5.4K+</strong> lines across Python core + Android · fake camera E2E</p>
               </button>
             </article>
-            <article class="project-item" data-category="robotics" data-detail="基于 ROS Noetic 与 Gazebo 完成 Tianracer F1TENTH 仿真，从航点巡航状态机、有限圈数计时到 TEB 参数对比调优，加入分段速度规划与卡死恢复。" data-tags="ROS Noetic,TEB,Gazebo,路径规划">
+            <article class="project-item" data-category="robotics" data-detail="基于 ROS Noetic 与 Gazebo 完成 Tianracer F1TENTH 仿真，从航点巡航状态机、有限圈数计时到 TEB 参数对比调优，加入分段速度规划与卡死恢复。" data-jd="ROS,Gazebo,路径规划,AMCL 定位,自动驾驶仿真" data-tags="ROS Noetic,TEB,Gazebo,路径规划">
               <button
                 class="project-open"
                 type="button"
@@ -315,7 +315,7 @@
                 <p class="project-proof mono"><strong>L0–L3</strong> complete · 3 TEB parameter sets</p>
               </button>
             </article>
-            <article class="project-supplement" data-category="ai" data-detail="把『说话像我』做成一个真能聊的本地模型：806 万条 QQ/微信私聊经解密、清洗、脱敏、角色归并与边缘裁剪，构建成 WeClone 口径的 SFT 数据集；对 Qwen3.5-9B 做 QLoRA 微调，v1 已在本地 Ollama 常驻部署并实测风格在线，v2 全量训练中。交付形态为 llama-server 网页聊天 + OpenAI 兼容 API，数据、训练、部署、推理四层全部落在自己机器上。" data-highlights="806 万条原始消息 → v4 训练集 train 12,135 / valid 1,640|QLoRA 微调 Qwen3.5-9B：4bit 量化、LoRA r16 全线性层、3 epochs|看门狗 60s 心跳，停滞 180s 自动杀进程、从 checkpoint 续训|部署五步管线：合并 → 纯文本抽取 → MTP 注入 → Q8_0 GGUF → Ollama|DRY 采样 + repeat_penalty + num_predict 200，三层防御治复读|PII 脱敏覆盖身份证/密码/API key/银行卡，训练文件残留 0|踩坑实录 12 条：sharegpt 静默丢 75% 数据 → 边缘裁剪找回 98.7%" data-tags="Python,LLaMA-Factory,QLoRA,Qwen3.5-9B,ROCm,数据工程,PII 脱敏">
+            <article class="project-supplement" data-category="ai" data-detail="把『说话像我』做成一个真能聊的本地模型：806 万条 QQ/微信私聊经解密、清洗、脱敏、角色归并与边缘裁剪，构建成 WeClone 口径的 SFT 数据集；对 Qwen3.5-9B 做 QLoRA 微调，v1 已在本地 Ollama 常驻部署并实测风格在线，v2 全量训练中。交付形态为 llama-server 网页聊天 + OpenAI 兼容 API，数据、训练、部署、推理四层全部落在自己机器上。" data-highlights="806 万条原始消息 → v4 训练集 train 12,135 / valid 1,640|QLoRA 微调 Qwen3.5-9B：4bit 量化、LoRA r16 全线性层、3 epochs|看门狗 60s 心跳，停滞 180s 自动杀进程、从 checkpoint 续训|部署五步管线：合并 → 纯文本抽取 → MTP 注入 → Q8_0 GGUF → Ollama|DRY 采样 + repeat_penalty + num_predict 200，三层防御治复读|PII 脱敏覆盖身份证/密码/API key/银行卡，训练文件残留 0|踩坑实录 12 条：sharegpt 静默丢 75% 数据 → 边缘裁剪找回 98.7%" data-jd="大模型微调,SFT,LoRA/QLoRA,模型量化,推理部署,RAG 数据链路,隐私合规" data-tags="Python,LLaMA-Factory,QLoRA,Qwen3.5-9B,ROCm,数据工程,PII 脱敏">
               <button class="project-open" type="button" aria-label="查看数字分身模型全链路">
                 <div class="project-image image-sft">
                   <img src="assets/project-sft.svg" alt="消息经清洗、脱敏进入 SFT 训练集的管线工程制图" width="1200" height="900" loading="lazy" />
@@ -327,7 +327,7 @@
                 <p class="project-proof mono"><strong>806万</strong> 条私聊 → 12,135 块训练样本 · v1 已部署</p>
               </button>
             </article>
-            <article class="project-supplement" data-category="ai" data-detail="磷灰石/胶磷矿-白云石体系的捕收剂粗筛：剂量-回收率曲线（R = Rmax·D/(Kd+D)）与结构-性能 QSAR 双模块并行——前者按捕收剂分别拟合，数据不足时用文献锚点均值兜底；后者用 RDKit 描述符 + 随机森林预测回收率，与 Ridge 基线网格对比选优，SHAP 解释特征贡献。11 个文献来源逐条可溯源，模型局限如实写进报告，并产出单文件离线 HTML 交互页用于演示。" data-highlights="39 条文献数据、11 个来源逐条可溯源（开放获取期刊 + CNKI/学位论文锚点）|双模块：剂量-回收率经验曲线 + RDKit 结构-性能 QSAR|随机森林 vs Ridge 网格选优：LOOCV MAE 12.3pp vs 17.7pp；品位副模型 2.3pp（n=26）|内置 8 个候选药剂库，按 500 g/t 预生成预测、页面直接对比排序|smiles_predict 命令行：输入新分子 SMILES 即出预测|SHAP + 95% 参考区间带宽，如实标注 n=30 与剂量主效应" data-tags="RDKit,随机森林,SHAP,QSAR,scikit-learn,可解释性">
+            <article class="project-supplement" data-category="ai" data-detail="磷灰石/胶磷矿-白云石体系的捕收剂粗筛：剂量-回收率曲线（R = Rmax·D/(Kd+D)）与结构-性能 QSAR 双模块并行——前者按捕收剂分别拟合，数据不足时用文献锚点均值兜底；后者用 RDKit 描述符 + 随机森林预测回收率，与 Ridge 基线网格对比选优，SHAP 解释特征贡献。11 个文献来源逐条可溯源，模型局限如实写进报告，并产出单文件离线 HTML 交互页用于演示。" data-highlights="39 条文献数据、11 个来源逐条可溯源（开放获取期刊 + CNKI/学位论文锚点）|双模块：剂量-回收率经验曲线 + RDKit 结构-性能 QSAR|随机森林 vs Ridge 网格选优：LOOCV MAE 12.3pp vs 17.7pp；品位副模型 2.3pp（n=26）|内置 8 个候选药剂库，按 500 g/t 预生成预测、页面直接对比排序|smiles_predict 命令行：输入新分子 SMILES 即出预测|SHAP + 95% 参考区间带宽，如实标注 n=30 与剂量主效应" data-jd="机器学习,特征工程,交叉验证,模型可解释性,SHAP,算法调优" data-tags="RDKit,随机森林,SHAP,QSAR,scikit-learn,可解释性">
               <button class="project-open" type="button" aria-label="查看浮选 QSAR 定向筛选模型">
                 <div class="project-image image-qsar">
                   <img src="assets/project-qsar.svg" alt="分子结构与浮选回收率预测曲线的工程制图，标注 LOOCV MAE 12.3pp" width="1200" height="900" loading="lazy" />
@@ -339,7 +339,7 @@
                 <p class="project-proof mono"><strong>12.3pp</strong> LOOCV MAE · 优于 Ridge 17.7pp · SHAP</p>
               </button>
             </article>
-            <article class="project-supplement" data-category="embedded" data-detail="ESP32-S3 主控的室内环境与人员活动测量终端，自设计 KiCad 载板，接入 DHT11、HC-SR501、DS1302 与 OLED，打通传感器采集、显示与硬件调试链路。" data-tags="ESP32-S3,ESP-IDF,KiCad,传感器">
+            <article class="project-supplement" data-category="embedded" data-detail="ESP32-S3 主控的室内环境与人员活动测量终端，自设计 KiCad 载板，接入 DHT11、HC-SR501、DS1302 与 OLED，打通传感器采集、显示与硬件调试链路。" data-jd="ESP-IDF,I2C/GPIO,传感器调试,PCB 设计,嵌入式硬件" data-tags="ESP32-S3,ESP-IDF,KiCad,传感器">
               <button class="project-open" type="button" aria-label="查看智能测量终端">
                 <div class="project-image image-terminal">
                   <img src="assets/project-terminal.svg" alt="ESP32-S3 载板工程制图：模块、OLED、PIR、RTC 与走线" width="1200" height="900" loading="lazy" />
@@ -351,7 +351,7 @@
                 <p class="project-proof mono"><strong>ESP32-S3</strong> + KiCad carrier · hardware整理中</p>
               </button>
             </article>
-            <article class="project-supplement" data-category="ai" data-detail="为本地 AI 工作流搭的算力底座：llama.cpp ROCm 版与 Ollama 双实例服务数字分身（OpenAI 兼容 API + 网页聊天）；训练与推理共用一张 RX 7900 XT，启动训练自动让出显存，看门狗 60s 心跳、停滞 180s 自动救援续训；Flask 控制台一页管理 loss 曲线与启停，NapCat/AstrBot、wxauto 双通道把模型接入 QQ 和微信。" data-highlights="llama.cpp ROCm 版 + Ollama 双实例：OpenAI 兼容 API + 网页聊天|训练/推理共用 19.8GB 显存：训练自动让位，看门狗 60s 心跳救援|Flask 控制台：进度、loss 曲线、启停与聊天服务开关一页管理|NapCat + AstrBot / wxauto 双通道，模型直连 QQ 与微信" data-tags="本地大模型,AMD GPU,ROCm,推理服务,调度">
+            <article class="project-supplement" data-category="ai" data-detail="为本地 AI 工作流搭的算力底座：llama.cpp ROCm 版与 Ollama 双实例服务数字分身（OpenAI 兼容 API + 网页聊天）；训练与推理共用一张 RX 7900 XT，启动训练自动让出显存，看门狗 60s 心跳、停滞 180s 自动救援续训；Flask 控制台一页管理 loss 曲线与启停，NapCat/AstrBot、wxauto 双通道把模型接入 QQ 和微信。" data-highlights="llama.cpp ROCm 版 + Ollama 双实例：OpenAI 兼容 API + 网页聊天|训练/推理共用 19.8GB 显存：训练自动让位，看门狗 60s 心跳救援|Flask 控制台：进度、loss 曲线、启停与聊天服务开关一页管理|NapCat + AstrBot / wxauto 双通道，模型直连 QQ 与微信" data-jd="模型部署,推理服务,LLMOps,GPU 运维,PyTorch/ROCm" data-tags="本地大模型,AMD GPU,ROCm,推理服务,调度">
               <button class="project-open" type="button" aria-label="查看 AI 办公与异构算力调度">
                 <div class="project-image image-localsrv">
                   <img src="assets/project-localsrv.svg" alt="本地算力调度工程制图：任务队列经调度器分发到 AMD GPU 与 Redis" width="1200" height="900" loading="lazy" />
@@ -363,7 +363,7 @@
                 <p class="project-proof mono"><strong>LLM</strong> 本地推理 · AMD GPU · Redis 调度</p>
               </button>
             </article>
-            <article class="project-supplement" data-category="embedded" data-detail="Android 端直连 BLE 设备，逆向 GATT 私有协议后向指定特征值写入 0x02 / 0x03，实现开关与自动档控制，并联动 RFID 做场景触发。" data-highlights="GATT 私有协议逆向，定位控制特征值|写入 0x02 / 0x03，实现开关与自动档切换|RFID 联动触发，Android 端约 300 行 Java" data-tags="BLE,GATT,Android,协议逆向,IoT">
+            <article class="project-supplement" data-category="embedded" data-detail="Android 端直连 BLE 设备，逆向 GATT 私有协议后向指定特征值写入 0x02 / 0x03，实现开关与自动档控制，并联动 RFID 做场景触发。" data-highlights="GATT 私有协议逆向，定位控制特征值|写入 0x02 / 0x03，实现开关与自动档切换|RFID 联动触发，Android 端约 300 行 Java" data-jd="BLE,GATT,物联网,协议分析,Android" data-tags="BLE,GATT,Android,协议逆向,IoT">
               <button class="project-open" type="button" aria-label="查看 BLE 协议逆向与 IoT 控制">
                 <div class="project-image image-ble">
                   <img src="assets/project-ble.svg" alt="BLE 协议逆向工程制图：手机经 GATT 特征值写入控制风扇" width="1200" height="900" loading="lazy" />
@@ -512,6 +512,10 @@
         <p id="dialog-description"></p>
         <ul id="dialog-highlights" class="dialog-highlights" hidden></ul>
         <div id="dialog-tags" class="dialog-tags"></div>
+        <div id="dialog-jd" class="dialog-jd" hidden>
+          <span class="dialog-jd-label mono">JD 匹配</span>
+          <div id="dialog-jd-chips" class="dialog-jd-chips"></div>
+        </div>
         <a
           class="text-link"
           href="https://github.com/orange9947"

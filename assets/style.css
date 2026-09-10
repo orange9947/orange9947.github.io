@@ -1298,7 +1298,34 @@ dialog::backdrop {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 24px 0 28px;
+  margin: 24px 0 16px;
+}
+.dialog-jd {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 0 0 28px;
+}
+.dialog-jd-label {
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  color: var(--accent-deep);
+  font-weight: 600;
+  padding: 6px 0;
+  flex-shrink: 0;
+}
+.dialog-jd-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.dialog-jd-chips span {
+  border: 1px solid rgba(245, 80, 43, 0.45);
+  background: rgba(245, 80, 43, 0.08);
+  color: var(--accent-deep);
+  padding: 5px 11px;
+  font-size: 11px;
+  border-radius: 2px;
 }
 .dialog-tags span {
   border: 1px solid #c9c4b3;
@@ -1862,6 +1889,10 @@ dialog::backdrop {
   }
   #dialog-description {
     font-size: 13px;
+  }
+  .dialog-jd {
+    flex-direction: column;
+    gap: 8px;
   }
 }
 
