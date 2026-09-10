@@ -206,6 +206,17 @@
     if (window.orangeScene) window.orangeScene.reset();
   });
 
+  var sceneHint = document.querySelector(".scene-hint");
+  if (sceneHint) {
+    var hideHint = function () {
+      sceneHint.classList.add("is-hidden");
+    };
+    document
+      .getElementById("sculpture-canvas")
+      .addEventListener("pointerdown", hideHint, { once: true });
+    window.setTimeout(hideHint, 10000);
+  }
+
   var toastTimer;
   function notify(message) {
     var toast = document.getElementById("toast");

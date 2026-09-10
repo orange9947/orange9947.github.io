@@ -234,28 +234,6 @@ a:focus-visible {
 .desktop-nav a.is-active span {
   color: var(--accent);
 }
-.header-contact {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  font-weight: 500;
-  padding-bottom: 2px;
-  border-bottom: 1px solid var(--ink);
-  transition: color 0.2s, border-color 0.2s;
-}
-.header-contact:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
-.header-contact:hover svg {
-  transform: translate(2px, -2px);
-}
-.header-contact svg {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.2s;
-}
 .icon-button {
   display: grid;
   place-items: center;
@@ -408,6 +386,13 @@ a:focus-visible {
   box-shadow: 3px 3px 0 var(--navy);
   transform: translate(2px, 2px);
 }
+.button-dark:active {
+  transform: translate(5px, 5px);
+  box-shadow: 0 0 0 var(--navy);
+}
+.icon-button:active {
+  transform: scale(0.9);
+}
 .button svg {
   width: 18px;
 }
@@ -465,6 +450,35 @@ a:focus-visible {
 #sculpture-canvas:active {
   cursor: grabbing;
 }
+.scene-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(19, 28, 42, 0.82);
+  color: var(--paper);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.scene-hint svg {
+  width: 13px;
+  height: 13px;
+}
+.hero-scene.is-ready .scene-hint {
+  opacity: 1;
+}
+.hero-scene .scene-hint.is-hidden {
+  opacity: 0;
+}
 .scene-heading {
   position: absolute;
   right: 10px;
@@ -508,11 +522,18 @@ a:focus-visible {
 .scene-toolbar {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   position: absolute;
   bottom: 72px;
   right: 0;
   z-index: 5;
+  background: rgba(247, 244, 236, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 4px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(19, 28, 42, 0.1);
 }
 .mode-switch {
   display: flex;
@@ -520,8 +541,11 @@ a:focus-visible {
 }
 .scene-toolbar .icon-button {
   width: 34px;
-  height: 34px;
-  background: rgba(247, 244, 236, 0.7);
+  height: 30px;
+  border-radius: 7px;
+}
+.scene-toolbar .icon-button:hover {
+  background: rgba(19, 28, 42, 0.08);
 }
 .scene-toolbar svg {
   width: 16px;
@@ -1575,18 +1599,10 @@ dialog::backdrop {
   .desktop-nav {
     display: none;
   }
-  .header-contact {
-    margin-left: auto;
-    font-size: 11px;
-    gap: 8px;
-    margin-right: 16px;
-  }
-  .header-contact svg {
-    width: 14px;
-  }
   .menu-toggle {
     display: grid;
     width: 30px;
+    margin-left: auto;
   }
   .hero-inner {
     min-height: clamp(570px, calc(100svh - 234px), 640px);
@@ -1649,6 +1665,10 @@ dialog::backdrop {
     right: 0;
     gap: 0;
   }
+  .scene-hint {
+    left: 0;
+    transform: none;
+  }
   .scene-toolbar .icon-button {
     width: 30px;
     height: 32px;
@@ -1658,7 +1678,7 @@ dialog::backdrop {
     height: 14px;
   }
   .hero-bottom {
-    bottom: 12px;
+    padding-bottom: 12px;
   }
   .hero-bottom .mono {
     font-size: 8px;
