@@ -261,7 +261,7 @@
                 <p class="project-proof mono"><strong>四头 FDM</strong> prime 宏与固件架构研读 · 实机问题闭环</p>
               </button>
             </article>
-            <article class="project-item" data-category="embedded" data-detail="逆向 Nikon SnapBridge APK 后独立实现 PTP/IP 协议客户端，完成 NEF/JPG 无线传图与远程拍摄 Android 原型。包含本地 fake 相机端到端测试与 Z6II 真机烟测。" data-tags="PTP/IP,Android,Kotlin,协议逆向">
+            <article class="project-item" data-category="embedded" data-detail="逆向 Nikon SnapBridge APK 后独立实现 PTP/IP 协议客户端，完成 NEF/JPG 无线传图与远程拍摄 Android 原型。针对不稳定的无线链路做断点续传、失败回退与自动重连，保证长传与连拍场景下的可靠性；包含本地 fake 相机端到端测试与 Z6II 真机烟测。" data-highlights="逆向 SnapBridge v2.13.3，不依赖官方任何代码|断点续传 + 失败回退标准 PTP 捕获指令，弱网下不丢传|后台保活与自动重连，连拍长传不掉线|本地 fake 相机端到端测试 + Z6II 真机烟测，行为可验证" data-tags="PTP/IP,Android,Kotlin,协议逆向,断点续传">
               <button
                 class="project-open"
                 type="button"
@@ -283,7 +283,7 @@
                 <div class="project-meta mono">
                   <span>WIRELESS CAMERA</span><span>ANDROID</span>
                 </div>
-                <h3>把相机，变成可编程设备</h3>
+                <h3>让无线传图，更快更稳</h3>
                 <p class="project-summary">Nikon 无线传图与远程拍摄</p>
                 <p class="project-proof mono"><strong>5.4K+</strong> lines across Python core + Android · fake camera E2E</p>
               </button>
@@ -315,19 +315,19 @@
                 <p class="project-proof mono"><strong>L0–L3</strong> complete · 3 TEB parameter sets</p>
               </button>
             </article>
-            <article class="project-supplement" data-category="ai" data-detail="面向个性化微调的数据工程实践：本地解密微信与 QQ NT 数据库，完成多格式清洗、精确去重、PII 脱敏和按时间窗的对话切分，按 WeClone 口径构建 LLaMA-Factory 可用的 SFT 训练集，并以规则与 LLM 双路对样本质量打分。全链路只在本机运行，原始内容不公开。" data-highlights="806 万条原始消息（微信 58.6 万 + QQ 748 万）→ 24,729 条 SFT 样本|时间窗对话切分、精确去重与 PII 脱敏，规则 + LLM 双路质量打分|密钥即用即删、数据不出本机，合规设计优先于功能|10 个脚本约 3,000 行，9 次规范提交，README 记录每次实跑数字与踩坑" data-tags="Python,SQLCipher,PyWxDump,LLaMA-Factory,数据工程,PII 脱敏">
-              <button class="project-open" type="button" aria-label="查看聊天记录 SFT 数据管线">
+            <article class="project-supplement" data-category="ai" data-detail="把『说话像我』做成一个真能聊的本地模型：806 万条 QQ/微信私聊经解密、清洗、脱敏、角色归并与边缘裁剪，构建成 WeClone 口径的 SFT 数据集；对 Qwen3.5-9B 做 QLoRA 微调，v1 已在本地 Ollama 常驻部署并实测风格在线，v2 全量训练中。交付形态为 llama-server 网页聊天 + OpenAI 兼容 API，数据、训练、部署、推理四层全部落在自己机器上。" data-highlights="806 万条原始消息 → v4 训练集 train 12,135 / valid 1,640|QLoRA 微调 Qwen3.5-9B：4bit 量化、LoRA r16 全线性层、3 epochs|看门狗 60s 心跳，停滞 180s 自动杀进程、从 checkpoint 续训|部署五步管线：合并 → 纯文本抽取 → MTP 注入 → Q8_0 GGUF → Ollama|DRY 采样 + repeat_penalty + num_predict 200，三层防御治复读|PII 脱敏覆盖身份证/密码/API key/银行卡，训练文件残留 0|踩坑实录 12 条：sharegpt 静默丢 75% 数据 → 边缘裁剪找回 98.7%" data-tags="Python,LLaMA-Factory,QLoRA,Qwen3.5-9B,ROCm,数据工程,PII 脱敏">
+              <button class="project-open" type="button" aria-label="查看数字分身模型全链路">
                 <div class="project-image image-sft">
                   <img src="assets/project-sft.svg" alt="消息经清洗、脱敏进入 SFT 训练集的管线工程制图" width="1200" height="900" loading="lazy" />
-                  <span class="project-number mono">04 / DATA</span><span class="project-image-note mono">SFT · PRIVATE PIPELINE</span><span class="project-open-icon"><i data-lucide="arrow-up-right"></i></span>
+                  <span class="project-number mono">04 / DATA</span><span class="project-image-note mono">DIGITAL TWIN · SFT</span><span class="project-open-icon"><i data-lucide="arrow-up-right"></i></span>
                 </div>
-                <div class="project-meta mono"><span>DATA PIPELINE</span><span>LLM</span></div>
-                <h3>把聊天记录，变成可训练数据</h3>
-                <p class="project-summary">聊天记录 SFT 数据管线</p>
-                <p class="project-proof mono"><strong>8.1M</strong> messages → 24,729 samples · 规则 + LLM 双路质检</p>
+                <div class="project-meta mono"><span>DIGITAL TWIN</span><span>LLM</span></div>
+                <h3>把聊天记录，变成你的数字分身</h3>
+                <p class="project-summary">数字分身模型 · 全链路落地</p>
+                <p class="project-proof mono"><strong>806万</strong> 条私聊 → 12,135 块训练样本 · v1 已部署</p>
               </button>
             </article>
-            <article class="project-supplement" data-category="ai" data-detail="面向磷矿浮选的候选捕收剂粗筛模型：基于公开文献数据，用 RDKit 分子描述符与随机森林预测回收率与品位，SHAP 解释特征贡献。全程数据可溯源、结论可复现，并诚实标注样本规模带来的模型局限。" data-highlights="39 条逐条可溯源的文献数据集，v1→v3 三轮 git 迭代|随机森林 LOOCV MAE 12.3pp，优于 Ridge 基线 17.7pp|SHAP 解释特征贡献，产出单文件离线 HTML 交互页|如实标注 n=30 样本规模与剂量主效应等局限" data-tags="RDKit,随机森林,SHAP,QSAR,scikit-learn,可解释性">
+            <article class="project-supplement" data-category="ai" data-detail="磷灰石/胶磷矿-白云石体系的捕收剂粗筛：剂量-回收率曲线（R = Rmax·D/(Kd+D)）与结构-性能 QSAR 双模块并行——前者按捕收剂分别拟合，数据不足时用文献锚点均值兜底；后者用 RDKit 描述符 + 随机森林预测回收率，与 Ridge 基线网格对比选优，SHAP 解释特征贡献。11 个文献来源逐条可溯源，模型局限如实写进报告，并产出单文件离线 HTML 交互页用于演示。" data-highlights="39 条文献数据、11 个来源逐条可溯源（开放获取期刊 + CNKI/学位论文锚点）|双模块：剂量-回收率经验曲线 + RDKit 结构-性能 QSAR|随机森林 vs Ridge 网格选优：LOOCV MAE 12.3pp vs 17.7pp；品位副模型 2.3pp（n=26）|内置 8 个候选药剂库，按 500 g/t 预生成预测、页面直接对比排序|smiles_predict 命令行：输入新分子 SMILES 即出预测|SHAP + 95% 参考区间带宽，如实标注 n=30 与剂量主效应" data-tags="RDKit,随机森林,SHAP,QSAR,scikit-learn,可解释性">
               <button class="project-open" type="button" aria-label="查看浮选 QSAR 定向筛选模型">
                 <div class="project-image image-qsar">
                   <img src="assets/project-qsar.svg" alt="分子结构与浮选回收率预测曲线的工程制图，标注 LOOCV MAE 12.3pp" width="1200" height="900" loading="lazy" />
@@ -351,7 +351,7 @@
                 <p class="project-proof mono"><strong>ESP32-S3</strong> + KiCad carrier · hardware整理中</p>
               </button>
             </article>
-            <article class="project-supplement" data-category="ai" data-detail="在本地环境部署大模型，跑通 AMD GPU 上的推理链路，并用 Redis 承担调度与缓存，把异构算力组合起来服务日常办公场景。" data-highlights="本地大模型部署，办公场景优先离线可用|AMD GPU 推理链路，异构算力组合|Redis 承担调度与缓存，任务按优先级排队" data-tags="本地大模型,AMD GPU,Redis,调度">
+            <article class="project-supplement" data-category="ai" data-detail="为本地 AI 工作流搭的算力底座：llama.cpp ROCm 版与 Ollama 双实例服务数字分身（OpenAI 兼容 API + 网页聊天）；训练与推理共用一张 RX 7900 XT，启动训练自动让出显存，看门狗 60s 心跳、停滞 180s 自动救援续训；Flask 控制台一页管理 loss 曲线与启停，NapCat/AstrBot、wxauto 双通道把模型接入 QQ 和微信。" data-highlights="llama.cpp ROCm 版 + Ollama 双实例：OpenAI 兼容 API + 网页聊天|训练/推理共用 19.8GB 显存：训练自动让位，看门狗 60s 心跳救援|Flask 控制台：进度、loss 曲线、启停与聊天服务开关一页管理|NapCat + AstrBot / wxauto 双通道，模型直连 QQ 与微信" data-tags="本地大模型,AMD GPU,ROCm,推理服务,调度">
               <button class="project-open" type="button" aria-label="查看 AI 办公与异构算力调度">
                 <div class="project-image image-localsrv">
                   <img src="assets/project-localsrv.svg" alt="本地算力调度工程制图：任务队列经调度器分发到 AMD GPU 与 Redis" width="1200" height="900" loading="lazy" />
