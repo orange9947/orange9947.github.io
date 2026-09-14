@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="ESP32-S3 智能测量终端载板工程制图：模块、传感器与走线">
+  <defs>
+    <pattern id="g40" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#1b2534" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+    <pattern id="g200" width="200" height="200" patternUnits="userSpaceOnUse">
+      <path d="M200 0H0v200" fill="none" stroke="#1b2534" stroke-opacity=".09" stroke-width="1"/>
+    </pattern>
+    <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="7" stroke="#1b2534" stroke-width="1" stroke-opacity=".38"/>
+    </pattern>
+    <pattern id="px" width="22" height="15" patternUnits="userSpaceOnUse">
+      <rect x="5" y="3" width="9" height="9" fill="#8de4d0" fill-opacity=".92"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="#f7f4ec"/>
+  <rect width="1200" height="900" fill="url(#g40)"/>
+  <rect width="1200" height="900" fill="url(#g200)"/>
+
+  <!-- 顶部注释 -->
+  <rect x="170" y="152" width="9" height="9" fill="#ff5a36"/>
+  <text x="190" y="166" font-family="'IBM Plex Mono',Consolas,monospace" font-size="14" letter-spacing="3" fill="#1b2534" fill-opacity=".72">SENSING CHAIN / ENV · PIR · RTC → OLED</text>
+
+  <!-- 载板 -->
+  <rect x="200" y="250" width="700" height="400" rx="16" fill="#f1eee2" stroke="#1b2534" stroke-width="3.4"/>
+  <g fill="none" stroke="#1b2534" stroke-width="1.8">
+    <circle cx="238" cy="288" r="10"/><circle cx="238" cy="288" r="4"/>
+    <circle cx="862" cy="288" r="10"/><circle cx="862" cy="288" r="4"/>
+    <circle cx="238" cy="612" r="10"/><circle cx="238" cy="612" r="4"/>
+    <circle cx="862" cy="612" r="10"/><circle cx="862" cy="612" r="4"/>
+  </g>
+
+  <!-- ESP32-S3 模块 -->
+  <rect x="290" y="330" width="190" height="130" rx="8" fill="none" stroke="#1b2534" stroke-width="3"/>
+  <rect x="304" y="344" width="162" height="88" fill="url(#hatch)" stroke="#1b2534" stroke-width="1.6"/>
+  <path d="M290 356l-11 8 11 8-11 8 11 8-11 8" fill="none" stroke="#ff5a36" stroke-width="2"/>
+  <text x="385" y="452" text-anchor="middle" font-family="'IBM Plex Mono',Consolas,monospace" font-size="14" letter-spacing="1" fill="#1b2534">ESP32-S3</text>
+
+  <!-- OLED -->
+  <rect x="600" y="292" width="220" height="112" rx="6" fill="none" stroke="#1b2534" stroke-width="3"/>
+  <rect x="616" y="306" width="188" height="84" fill="url(#px)" stroke="#1b2534" stroke-width="1.6"/>
+  <text x="710" y="424" text-anchor="middle" font-family="'IBM Plex Mono',Consolas,monospace" font-size="12" letter-spacing="2" fill="#1b2534" fill-opacity=".6">OLED 128×64</text>
+
+  <!-- PIR -->
+  <circle cx="770" cy="500" r="48" fill="none" stroke="#1b2534" stroke-width="3"/>
+  <path d="M740 466a44 44 0 0 1 60 0M734 500h72" fill="none" stroke="#1b2534" stroke-width="1.6"/>
+  <circle cx="770" cy="500" r="7" fill="#ff5a36"/>
+  <text x="770" y="566" text-anchor="middle" font-family="'IBM Plex Mono',Consolas,monospace" font-size="12" letter-spacing="2" fill="#1b2534" fill-opacity=".6">HC-SR501</text>
+
+  <!-- RTC + 晶振 -->
+  <rect x="290" y="510" width="120" height="66" rx="6" fill="none" stroke="#1b2534" stroke-width="3"/>
+  <g fill="#1b2534">
+    <circle cx="314" cy="532" r="3"/><circle cx="334" cy="532" r="3"/><circle cx="354" cy="532" r="3"/><circle cx="374" cy="532" r="3"/>
+    <circle cx="314" cy="552" r="3"/><circle cx="334" cy="552" r="3"/><circle cx="354" cy="552" r="3"/><circle cx="374" cy="552" r="3"/>
+  </g>
+  <text x="350" y="596" text-anchor="middle" font-family="'IBM Plex Mono',Consolas,monospace" font-size="12" letter-spacing="2" fill="#1b2534" fill-opacity=".6">DS1302</text>
+  <rect x="440" y="530" width="54" height="26" rx="8" fill="none" stroke="#1b2534" stroke-width="2"/>
+  <line x1="452" y1="543" x2="482" y2="543" stroke="#1b2534" stroke-width="1.4"/>
+
+  <!-- 走线 -->
+  <g fill="none" stroke="#1b2534" stroke-width="1.7">
+    <path d="M480 366h60l40-36h66"/>
+    <path d="M480 412h76l48 48h118"/>
+    <path d="M350 460v50"/>
+    <path d="M480 543h-32"/>
+  </g>
+  <g fill="#1b2534">
+    <circle cx="540" cy="366" r="4"/><circle cx="556" cy="412" r="4"/><circle cx="604" cy="460" r="4"/>
+  </g>
+  <path d="M340 330v-32h234" fill="none" stroke="#ff5a36" stroke-width="2.2"/>
+  <circle cx="340" cy="322" r="4" fill="#ff5a36"/>
+  <circle cx="574" cy="298" r="4" fill="#ff5a36"/>
+  <text x="588" y="286" font-family="'IBM Plex Mono',Consolas,monospace" font-size="11" letter-spacing="1" fill="#ff5a36">I2C</text>
+
+  <!-- 排针 -->
+  <g fill="none" stroke="#1b2534" stroke-width="1.6">
+    <rect x="512" y="330" width="26" height="130"/>
+    <path d="M518 342h14M518 362h14M518 382h14M518 402h14M518 422h14M518 442h14"/>
+  </g>
+  <text x="840" y="636" text-anchor="end" font-family="'IBM Plex Mono',Consolas,monospace" font-size="11" letter-spacing="2" fill="#1b2534" fill-opacity=".55">CARRIER REV.C</text>
+
+  <text x="170" y="766" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".55">FIG. 06 / CARRIER BOARD</text>
+  <text x="1030" y="766" text-anchor="end" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".55">KICAD · 2-LAYER</text>
+</svg>
