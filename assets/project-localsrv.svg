@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="本地算力调度工程制图：任务队列、调度器与 GPU / Redis 计算单元">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="本地算力调度工程制图：任务队列、调度器与 GPU / 队列缓存 计算单元">
   <defs>
     <pattern id="g40" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M40 0H0v40" fill="none" stroke="#1b2534" stroke-opacity=".05" stroke-width="1"/>
@@ -68,18 +68,18 @@
   </g>
   <text x="770" y="462" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".7">AMD GPU · INFERENCE</text>
 
-  <!-- Redis 单元 -->
+  <!-- 队列/缓存单元 -->
   <line x1="644" y1="478" x2="756" y2="548" stroke="#1b2534" stroke-width="2" marker-end="url(#arrN)"/>
   <g fill="none" stroke="#1b2534" stroke-width="3">
     <path d="M770 560h240v96a120 22 0 0 1-240 0z"/>
     <ellipse cx="890" cy="560" rx="120" ry="22"/>
   </g>
   <path d="M770 610a120 22 0 0 0 240 0" fill="none" stroke="#1b2534" stroke-width="1.6" stroke-dasharray="6 6"/>
-  <text x="890" y="700" text-anchor="middle" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".7">REDIS · CACHE / QUEUE</text>
+  <text x="890" y="700" text-anchor="middle" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".7">QUEUE · CACHE / BUFFER</text>
 
   <!-- 回路 -->
   <path d="M890 724v26H582v-84" fill="none" stroke="#ff5a36" stroke-width="1.8" stroke-dasharray="5 6" marker-end="url(#arrO)"/>
-  <text x="700" y="770" font-family="'IBM Plex Mono',Consolas,monospace" font-size="12" fill="#ff5a36">CACHE HIT → REUSE</text>
+  <text x="700" y="770" font-family="'IBM Plex Mono',Consolas,monospace" font-size="12" fill="#ff5a36">RESULT → REUSE</text>
 
   <text x="170" y="766" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".55">FIG. 07 / LOCAL AI</text>
   <text x="1030" y="766" text-anchor="end" font-family="'IBM Plex Mono',Consolas,monospace" font-size="13" letter-spacing="2" fill="#1b2534" fill-opacity=".55">OFFLINE READY</text>

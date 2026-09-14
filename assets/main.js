@@ -121,7 +121,7 @@
           })
           .join(" / ");
         document.getElementById("dialog-title").textContent =
-          project.querySelector(".project-summary").textContent;
+          project.querySelector("h3").textContent;
         document.getElementById("dialog-description").textContent =
           project.dataset.detail;
         var tags = document.getElementById("dialog-tags");
